@@ -12,6 +12,7 @@ import Item from "./Item";
 import OneItem from './OneItem';
 import OneNewItems from './OneNewItems';
 import Cart from './Cart';
+import SearchData from './SearchData';
 
 
 
@@ -30,6 +31,7 @@ const App = () => {
     <Route path='/login' element={<Signin/>}/>
     <Route path='/about' element={<About/>}/>
     <Route path='/logout' element={<Logout/>}/>
+    <Route path='/search' element={<SearchData/>}/>
     <Route path='/:id' element={<Item/>}/>
     <Route path='/:id/:name' element={<OneItem/>}/>
     <Route path='/:id/:name/:onenew' element={<OneNewItems/>}/>

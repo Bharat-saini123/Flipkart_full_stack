@@ -4,17 +4,12 @@ import { AppContext } from "./Context";
 import {FaStar,FaStarHalfAlt  } from "react-icons/fa";
 import { FiStar } from "react-icons/fi";
 
-// AiOutlineStar
-// AiFillStar
-// BiSolidStarHalf
-// 
-// 
-// 
+
 const OneNewItems = () => {
   const { onenew } = useParams();
   const [change, setChange] = useState(0);
   const { oneNewItem, onewNewFilterData } = useContext(AppContext);
-  // console.log(oneNewItem);
+
   useEffect(() => {
     onewNewFilterData(onenew);
   }, []);

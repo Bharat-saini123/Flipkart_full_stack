@@ -92,9 +92,23 @@ response.status(412).json("your password is incorrect")
                const {firstname,lastname,email,phone,gender}=request.body;
               const user=await userFlipkart.findByIdAndUpdate({_id:request.userId},{firstname:firstname,lastname:lastname,email:email,phone:phone,gender:gender},{new:true});
               await user.save();
-              response.status(200).json("save data")
+              response.status(200).json("save data");
+              console.log("yes baby common karo na or")
       console.log(user)
             })
+
+
+            router.put("/cartData",Auth,async(request,response)=>{
+               const {totalItem,totalPrice,cartItem}=request.body;
+               const user=await userFlipkart.findByIdAndUpdate({_id:request.userId},{totalItem:totalItem,totalPrice:totalPrice,cartItem:cartItem},{new:true});
+               await user.save();
+               response.status(200).json("save data")
+       console.log(user)
+            
+         
+        })
+
+
 router.get("/logout",(request,response)=>{
     response.clearCookie("myloginCookie");
     response.status(200).json("sucessfully clear cookie")

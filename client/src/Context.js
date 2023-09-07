@@ -2,6 +2,7 @@ import { createContext, useReducer } from "react";
 import reducer from "./Reducers/reducer";
 import apiReducer from "./Reducers/apiReducer";
 import cartReducer from "./Reducers/cartReducer";
+import SearchReducer from "./Reducers/SearchReducer";
 const initialApiData={
 item:[],
 oneItem:[],
@@ -13,13 +14,24 @@ const initialCart={
     cartItem:[],
     totalItem:0,
     totalPrice:0,
-}
 
+}
+const initialSearch={
+    searchData:[],
+    text:"",
+    maxPrice:0,
+    minPrice:0,
+    price:0,
+    
+}
 const AppContext=createContext();
 const AppProvider=({children})=>{
     const [apiState,apiDispatch]=useReducer(apiReducer,initialApiData)
     const [state,dispatch]=useReducer(reducer,null);
+   
     const [cartState,cartDtspatch]=useReducer(cartReducer,initialCart);
+
+    const [searchState,searchDispatch]=useReducer(SearchReducer,initialSearch);
     const filterFunctionData=(itemId)=>{
 apiDispatch({type:"FILTER_DATA",payload:itemId})
     }
@@ -57,9 +69,32 @@ return cartDtspatch({type:"ADDTION_FUNCTION",payload:id})
     const totalPriceValue=()=>{
         return cartDtspatch({type:"TOTAL_PRICE_VALUE"})
     }
- console.log(cartState.totalPrice)
 
-return <AppContext.Provider value={{state,dispatch,...apiState,...apiDispatch,filterFunctionData,OneFilterFunction,onewNewFilterData,cartItemData,...cartState,cartDtspatch,cartDeleteFunction,clearAllCartFunction,additionFunction,minusFunction,totalItemFunction,totalPriceValue}}>
+
+const SearchChangeFunction=(event)=>{
+
+    searchDispatch({type:"SEARCH_DATA",payload:event
+    })
+
+}
+
+const searchFilterData=()=>{
+    searchDispatch({type:"SEARCH_FILTER"})
+}
+const filterBySection=(event)=>{
+    const value=event.target.value;
+  
+searchDispatch({type:"SEARCHBY_NAME",payload:value})
+}
+
+const MobileFilter=(e)=>{
+    const value=e.target.value;
+    searchDispatch({type:"MOBLIE_FILTER",payload:value})
+}
+
+
+
+return <AppContext.Provider value={{state,dispatch,...apiState,...apiDispatch,filterFunctionData,OneFilterFunction,onewNewFilterData,cartItemData,...cartState,cartDtspatch,cartDeleteFunction,clearAllCartFunction,additionFunction,minusFunction,totalItemFunction,totalPriceValue,...searchState,SearchChangeFunction,searchFilterData,filterBySection,MobileFilter}}>
     {children}
 </AppContext.Provider>
 }

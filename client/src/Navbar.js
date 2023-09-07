@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AiOutlineShoppingCart,AiFillHome } from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
 import { AppContext } from './Context';
 
+
 const Navbar = () => {
+  
 
 const {state}=useContext(AppContext);
 const Menu=()=>{
@@ -23,6 +25,7 @@ const Menu=()=>{
 
 {/* </NavLink> */}
 <NavLink to={"/about"} style={{textDecoration:"none",margin:"1rem",color:"white",fontWeight:"bold"}}>About</NavLink>
+<NavLink to={`/id/name/onenew/cartId`} style={{textDecoration:"none",margin:"1rem",color:"white",fontWeight:"bold"}}>Cart</NavLink>
 <NavLink to={"/logout"} style={{textDecoration:"none",margin:"1rem",color:"white",fontWeight:"bold"}}>Logout</NavLink>
     
     </>

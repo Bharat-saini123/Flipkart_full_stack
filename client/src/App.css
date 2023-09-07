@@ -144,9 +144,6 @@ body{
 
  /* one-item */
 .my-top-one-item-box{
-  display: grid;
-  grid-template-columns: 0.3fr 1fr;
-  gap:3rem;
   padding-top: 3rem;
   width: 125rem;
   margin: auto;
@@ -215,4 +212,16 @@ body{
   gap: 5rem;
   place-items: center;
 
+}
+
+/* search data */
+.search-data{
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  gap: 3rem;
+  padding: 5rem;
+}
+.search-box{
+  background-color: #fff;
+  padding: 5rem;
 }

@@ -244,7 +244,7 @@ if(response.status===200){
               <div style={{ textAlign: "center", marginTop: "5rem" }}>
                 {" "}
                 <button
-                  className="upload"
+                  className="upload btn btn-primary"
                   style={{
                     textAlign: "center",
                     fontSize: "1.3rem",

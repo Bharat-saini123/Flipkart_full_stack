@@ -7,11 +7,11 @@ import {
   AiOutlineMinus,
   AiOutlineDelete,
 } from "react-icons/ai";
-//
-//
+
 
 const Cart = () => {
   const { cartId } = useParams();
+
   const {
     cartItemData,
     cartItem,
@@ -23,7 +23,14 @@ const Cart = () => {
     totalItem,
     totalPriceValue,
     totalPrice,
+    userLoginMyFunction
   } = useContext(AppContext);
+
+
+
+
+
+  
   useEffect(() => {
     totalItemFunction();
   }, [cartItem]);
@@ -32,6 +39,8 @@ const Cart = () => {
   }, [cartItem]);
   useEffect(() => {
     cartItemData(cartId);
+    
+    
   }, []);
   return (
     <div style={{ backgroundColor: "#fff", padding: "5rem 0rem" }}>
@@ -167,9 +176,7 @@ const Cart = () => {
                                 style={{ fontSize: "2rem", fontWeight: "500" }}
                               >
                                 <span> &#8377;</span>{" "}
-                                {ElementData.price === undefined
-                                  ? ""
-                                  : ElementData.price}
+                           {ElementData.quantity*ElementData.price===undefined?"":ElementData.quantity*ElementData.price}
                               </div>
                               <div
                                 className="delete-icon"
@@ -215,6 +222,8 @@ const Cart = () => {
               textTransform: "capitalize",
             }}
             className="btn btn-primary"
+
+            onClick={userLoginMyFunction}
           >
             Add cart
           </button>

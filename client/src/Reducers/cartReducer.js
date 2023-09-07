@@ -4,21 +4,70 @@ import AllApi from "../AllApi";
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "CART_DATA": {
-      return {
-        ...state,
-        cartItem: [
-          ...state.cartItem,
-          AllApi.map((curr) => {
-            const data = curr.array.map((current) => {
-              const myData = current.filter((myCurrent) => {
-                return myCurrent.id === parseInt(action.payload);
-              });
-              return myData;
+      const blanarray = [];
+      const data = state.cartItem.map((curr) => {
+        const myData = curr.map((current) => {
+          const itemData = current.map((currData) => {
+            const totalItemData = currData.filter((currentElement) => {
+              if (Number(currentElement.id) === Number(action.payload)) {
+                blanarray.push("yesbabe");
+                return Number(currentElement.id) === Number(action.payload);
+              }
             });
-            return data;
-          }),
-        ],
-      };
+            return totalItemData;
+          });
+          return itemData;
+        });
+        return myData;
+      });
+
+      if (blanarray[0] === "yesbabe") {
+        blanarray.length = 0;
+
+        const updatedProduct = state.cartItem.map((curr) => {
+          const myData = curr.map((current) => {
+            const itemData = current.map((currData) => {
+              const totalItemData = currData.map((currentElement) => {
+                if (Number(currentElement.id) === Number(action.payload)) {
+                  blanarray.length = 0;
+                  return {
+                    ...currentElement,
+                    quantity: currentElement.quantity + 1,
+                  };
+                } else {
+                  blanarray.length = 0;
+                  return currentElement;
+                }
+              });
+              return totalItemData;
+            });
+            return itemData;
+          });
+          return myData;
+        });
+        return {
+          ...state,
+          cartItem: updatedProduct,
+        };
+      } else {
+        blanarray.length = 0;
+
+        return {
+          ...state,
+          cartItem: [
+            ...state.cartItem,
+            AllApi.map((curr) => {
+              const data = curr.array.map((current) => {
+                const myData = current.filter((myCurrent) => {
+                  return myCurrent.id === parseInt(action.payload);
+                });
+                return myData;
+              });
+              return data;
+            }),
+          ],
+        };
+      }
     }
     case "DELETE_CART": {
       const data = state.cartItem;
@@ -138,12 +187,12 @@ const cartReducer = (state, action) => {
       };
     }
 
-    case "TOTAL_PRICE_VALUE":{
+    case "TOTAL_PRICE_VALUE": {
       const item = state.cartItem.map((curr) => {
         const data = curr.map((current) => {
           const myData = current.map((currentElement) => {
             const totalItem = currentElement.reduce((acc, currData) => {
-              acc += (currData.price)*(currData.quantity);
+              acc += currData.price * currData.quantity;
               return acc;
             }, 0);
             return totalItem;
@@ -176,10 +225,10 @@ const cartReducer = (state, action) => {
         return acc;
       }, 0);
 
-      return{
+      return {
         ...state,
-        totalPrice:myReducer
-      }
+        totalPrice: myReducer,
+      };
     }
   }
 
