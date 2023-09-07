@@ -638,6 +638,103 @@ const SearchReducer = (state, action) => {
   
         }
       }
+      if(value==="diary"){
+        const AllArray = AllApi.map((curr) => {
+          const data = curr.array.map((currData) => {
+            const myData = currData.filter((current) => {
+              return current.category==="diary";
+            });
+            return myData;
+          });
+          return data;
+        });
+        return{
+          ...state,
+          searchData: AllArray,
+  
+        }
+      }
+      if(value==="detergent"){
+        const AllArray = AllApi.map((curr) => {
+          const data = curr.array.map((currData) => {
+            const myData = currData.filter((current) => {
+              return current.category==="detergent";
+            });
+            return myData;
+          });
+          return data;
+        });
+        return{
+          ...state,
+          searchData: AllArray,
+  
+        }
+      }
+      if(value==="vegetables"){
+        const AllArray = AllApi.map((curr) => {
+          const data = curr.array.map((currData) => {
+            const myData = currData.filter((current) => {
+              return current.category==="vegetables";
+            });
+            return myData;
+          });
+          return data;
+        });
+        return{
+          ...state,
+          searchData: AllArray,
+  
+        }
+      }
+
+      if(value==="kitchen"){
+        const AllArray = AllApi.map((curr) => {
+          const data = curr.array.map((currData) => {
+            const myData = currData.filter((current) => {
+              return current.category==="kitchen";
+            });
+            return myData;
+          });
+          return data;
+        });
+        return{
+          ...state,
+          searchData: AllArray,
+  
+        }
+      }
+      if(value==="packagefood"){
+        const AllArray = AllApi.map((curr) => {
+          const data = curr.array.map((currData) => {
+            const myData = currData.filter((current) => {
+              return current.category==="packagefood";
+            });
+            return myData;
+          });
+          return data;
+        });
+        return{
+          ...state,
+          searchData: AllArray,
+  
+        }
+      }
+      if(value==="personalhome"){
+        const AllArray = AllApi.map((curr) => {
+          const data = curr.array.map((currData) => {
+            const myData = currData.filter((current) => {
+              return current.category==="personalhome";
+            });
+            return myData;
+          });
+          return data;
+        });
+        return{
+          ...state,
+          searchData: AllArray,
+  
+        }
+      }
       }
     
     

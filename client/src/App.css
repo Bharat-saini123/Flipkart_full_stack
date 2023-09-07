@@ -208,7 +208,7 @@ body{
 }
 .main-shopping-item-card{
   display: grid;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(6,1fr);
   gap: 5rem;
   place-items: center;
 

@@ -68,6 +68,14 @@ const SearchData = () => {
     <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"tv"}>Tv</button>
     <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"washing Machine"}>Washing Machine</button>
    <hr />
+   <p style={{textTransform:"capitalize",textAlign:"center",fontWeight:"500",fontSize:"2rem"}}>Grocery</p> 
+    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"diary"}>Diary</button>
+    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"detergent"}>Detergent</button>
+    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"vegetables"}>Vegetables</button>
+    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"kitchen"}>Kitchen</button>
+    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"packagefood"}>Pacakege food</button>
+    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"personalhome"}>Personal Home</button>
+
 
           </div>
 
