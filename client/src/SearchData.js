@@ -20,10 +20,13 @@ const SearchData = () => {
   return (
     <div className="main-search-data">
       <div className="search-data" >
+        
         <div
           className="box-1 search-box"
           style={{ display: "flex", flexDirection: "column", gap: "2rem" }}
         >
+          <div style={{fontSize:"3rem",textAlign:'center',textTransform:"uppercase",fontWeight:"500"}} >Filters</div>
+          
           <select
             name=""
             id=""
@@ -32,6 +35,9 @@ const SearchData = () => {
               textTransform: "capitalize",
               outline: "none",
               marginBottom: "8rem",
+              border: "0.5px solid rgba(128, 128, 128, 0.39)",
+              padding:"0.4rem 1.2rem"
+
             }}
             onClick={filterBySection}
           >
@@ -40,6 +46,7 @@ const SearchData = () => {
             <option value="min-price">min-price</option>
             <option value="max-price">max-price</option>
           </select>
+        
           <p
             style={{
               textTransform: "capitalize",

@@ -27,6 +27,11 @@ import CasualWoman from "./FootWear/woman/CasualWoman";
 import Remote from "./Toys/Remote";
 import Fitness from "./Sports/Fitness";
 import Cricket from "./Sports/Cricket";
+import lamp from "./Furniture/lamp";
+import Tools from "./Furniture/Tools"
+import Clock from "./Furniture/Clock";
+import Security from "./Furniture/Security";
+import Light from "./Furniture/Light"
 
 const BottomHeader = () => {
   return (
@@ -41,7 +46,7 @@ const BottomHeader = () => {
       <HeaderListTypeContent data={SamsungApi} />
 
       <div style={{margin:"2rem 0rem"}}>
-        <figure style={{ width: "100vw", height: "80vh" }}>
+        <figure style={{ width: "100vw", height: "95vh" }}>
           <img
             src="./images/flip6.jpg"
             alt=""
@@ -52,7 +57,7 @@ const BottomHeader = () => {
       <HeaderListTypeContent data={MonitorApi} />
       <HeaderListTypeContent data={Laptop} />
       <div style={{margin:"2rem 0rem"}}>
-        <figure style={{ width: "100vw", height: "90vh" }}>
+        <figure style={{ width: "100vw", height: "95vh" }}>
           <img
             src="./images/flip4.jpg"
             alt=""
@@ -66,7 +71,7 @@ const BottomHeader = () => {
       <HeaderListTypeContent data={SuitApi} />
       <HeaderListTypeContent data={CausaualShirtApi} />
       <div style={{margin:"2rem 0rem"}}>
-        <figure style={{ width: "100vw", height: "90vh" }}>
+        <figure style={{ width: "100vw", height: "95vh" }}>
           <img
             src="./images/flip9.jpg"
             alt=""
@@ -97,14 +102,25 @@ const BottomHeader = () => {
           <img
             src="./images/flip13.jpg"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover",objectPosition:"top" }}
           />
         </figure>
         <HeaderListTypeContent data={Remote} />
         <HeaderListTypeContent data={Cricket} />
         <HeaderListTypeContent data={Fitness} />
-      
-      
+        <figure style={{ width: "100vw", height: "130vh" }}>
+          <img
+            src="./images/flip7.jpg"
+            alt=""
+            style={{ width: "100%", height: "100%" ,objectFit: "cover",objectPosition:"top" }}
+          />
+        </figure>
+        <HeaderListTypeContent data={Tools} />
+        <HeaderItemContent data={lamp} />
+        <HeaderItemContent data={Clock} />
+        <HeaderListTypeContent data={Security} />
+        <HeaderListTypeContent data={Light} />
+        
     </div>
   );
 };

@@ -6,7 +6,7 @@ import image from "./image/flip8.jpg"
 import { AppContext } from './Context';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Signin = () => {
@@ -42,17 +42,30 @@ const {state,dispatch}=useContext(AppContext);
 
       const data=await response.json();
       if(response.status===404){
-        toast.error("please filled all the data")
+        toast.error("please filled all the data", {
+          position: "top-right",
+          autoClose: 1000,
+          })
       }
       if(response.status===408){
-        toast.warning("Invalid Login")
+        toast.warning("Invalid Login", {
+          position: "top-right",
+          autoClose: 1000,
+          })
       }
       if(response.status===412){
-        toast.warning("Invalid Login")
+        toast.warning("Invalid Login", {
+          position: "top-right",
+          autoClose: 1000,
+          })
       }
       if(response.status===200){
 dispatch({type:"USER",payload:true})
-        window.alert("you login sucessfully");
+toast.success("sucessfull Login", {
+  position: "top-right",
+  autoClose: 1000,
+  })
+       
         setInput({
           email:"",
     password:"",
@@ -69,9 +82,10 @@ dispatch({type:"USER",payload:true})
   }
 
 
-  return (
+  return (<>
+  {/* <ToastContainer style={{fontSize:"1.5rem"}}/> */}
     <div className='main-signup' style={{backgroundImage:`url(${image})`,backgroundPosition:"cover",backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
-<ToastContainer style={{fontSize:"1.5rem",fontWeight:"500",textTransform:"capitalize"}}/>
+
     <div className="signup-header" style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100vw",height:"100vh",flexDirection:'column'}}>
 <div className='user-signup-page' style={{padding:"5rem 7rem 5rem 5rem ",borderRadius:'5rem',border:"0.1rem solid #fff"}}>
 
@@ -98,6 +112,7 @@ dispatch({type:"USER",payload:true})
 
     
 </div>
+</>
   )
 }
 

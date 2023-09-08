@@ -1,7 +1,9 @@
 import React, {  useContext, useEffect } from 'react'
 import { AppContext } from './Context';
 import { useNavigate } from 'react-router-dom';
-import image from "./image/flip8.jpg"
+import image from "./image/flip8.jpg";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 const Logout = () => {
@@ -17,6 +19,10 @@ const response=await fetch("/logout",{
     },credentials:"include"
 })
 const data=await response.json();
+toast.success("you successful logout", {
+    position: "top-left",
+    autoClose: 1000,
+    })
 dispatch({type:"USER",payload:false})
 cartDtspatch({type:"LOGOUT_DATA"})
 navigate("/login")

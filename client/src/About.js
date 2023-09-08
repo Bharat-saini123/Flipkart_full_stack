@@ -168,6 +168,10 @@ Accept:"application/json",
 })
 const data=await response.json();
 if(response.status===200){
+  toast.success("you successful logout", {
+    position: "top-left",
+    autoClose: 1000,
+    })
   dispatch({type:"USER",payload:false})
   navigate("/login");
 }

@@ -44,6 +44,9 @@ const response=await fetch("/getData",{
 const data= await response.json();
 console.log(response.status)
 if(response.status===408){
+  toast.error("please login before enter the cart page",{
+    autoClose: 2000,
+})
   navigate('/login')
  
 }
@@ -68,7 +71,7 @@ useEffect(() => {
  
   return (
     <div style={{ backgroundColor: "#fff", padding: "5rem 0rem" }}>
-       <ToastContainer style={{fontSize:"1.5rem"}}/>
+       
       <div className="container">
         <div>
           <div

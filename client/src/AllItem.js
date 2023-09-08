@@ -36,7 +36,10 @@ const AllItem = ({ propsItem }) => {
                       fontWeight: "500",
                       border: "0.5px solid rgba(128, 128, 128, 0.39)",
                       minHeight:"30rem",
-                      width:"40rem"
+                      width:"40rem",
+                     
+                      
+                    
                     }}
                   >
                    <div style={{display:"flex",justifyContent:'space-between',alignItems:"center"}}>
@@ -97,7 +100,7 @@ const AllItem = ({ propsItem }) => {
                         {current.cprice}
                       </div>
                     </div>
-
+<div style={{paddingLeft:"5rem"}}>
                     <div
                       className="battery"
                       style={{ fontSize: "2rem", fontWeight: "500" }}
@@ -135,6 +138,7 @@ const AllItem = ({ propsItem }) => {
                       {current.processor === undefined || null
                         ? ""
                         : `${current.processor.slice(0,30)}...`}
+                    </div>
                     </div>
                     </div>
                   </NavLink>

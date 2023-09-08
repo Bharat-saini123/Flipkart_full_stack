@@ -14,7 +14,7 @@ const initialApiData = {
 const initialCart = {
   cartItem: [],
   totalItem: 0,
-  totalPrice: 0,
+  totalPrice: 0
   
 };
 const initialSearch = {
@@ -181,7 +181,7 @@ const AppProvider = ({ children }) => {
         paymentAddFunction,
       }}
     >
-      <ToastContainer />
+      <ToastContainer style={{fontSize:"1.5rem",fontWeight:"500"}}/>
       {children}
     </AppContext.Provider>
   );

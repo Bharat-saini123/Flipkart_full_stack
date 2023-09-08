@@ -46,20 +46,20 @@ const response=await fetch("/signup",{
 const data=await response.json();
 if(response.status===404){
     
-    toast.error("Plz filled all the data",{
+    toast.error("please filled all the data",{
         autoClose: 2000,
     })
 }
 if(response.status===408){
     
-    toast.error("Plz filled right data",{
+    toast.error("please filled right data",{
         autoClose: 2000,
     })
 
 }
 if(response.status===412){
    
-    toast.warning("Your Email already exit",{
+    toast.warning("your email already exit",{
         autoClose: 2000,
     })
     
@@ -82,7 +82,7 @@ if(response.status===200){
     })
     
  
-    window.alert("you Sucessfully login")
+    window.alert("you Sucessfully create account")
     navigate("/login")
 
 }
@@ -92,7 +92,7 @@ if(response.status===200){
     }
   return (
     <form className='main-signup' style={{backgroundImage:`url(${image})`,backgroundPosition:"cover",backgroundRepeat:"no-repeat",backgroundSize:"cover"}} >
-<ToastContainer style={{fontSize:"1.5rem",fontWeight:"500",textTransform:"capitalize"}}/>
+
         <div className="signup-header" style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100vw",height:"100vh",flexDirection:'column'}}>
 <div className='user-signup-page' style={{padding:"5rem 7rem 5rem 5rem ",borderRadius:'5rem',border:"0.1rem solid #fff"}}>
 
