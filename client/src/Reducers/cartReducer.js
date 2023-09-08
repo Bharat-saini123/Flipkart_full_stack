@@ -230,6 +230,13 @@ const cartReducer = (state, action) => {
         totalPrice: myReducer,
       };
     }
+    case "LOGOUT_DATA":{
+      return{
+        ...state,
+        cartItem:[],
+      }
+    }
+   
   }
 
   return state;

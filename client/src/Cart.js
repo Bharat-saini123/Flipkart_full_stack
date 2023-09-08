@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { AppContext } from "./Context";
-
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
@@ -13,7 +13,7 @@ import {
 
 const Cart = () => {
   const { cartId } = useParams();
-
+const navigate=useNavigate()
   const {
     cartItemData,
     cartItem,
@@ -29,16 +29,43 @@ const Cart = () => {
    
   } = useContext(AppContext);
 
-  useEffect(() => {
-    totalItemFunction();
-  }, [cartItem]);
-  useEffect(() => {
-    totalPriceValue();
-  }, [cartItem]);
-  useEffect(() => {
-    cartItemData(cartId);
-   
-  }, []);
+
+ const userAuthenticateFunction=async()=>{
+try{
+const response=await fetch("/getData",{
+  method:"GET",
+  headers:{
+    Accept:"application/json",
+    "Content-Type":"application/json"
+
+  },
+  credentials:"include"
+})
+const data= await response.json();
+console.log(response.status)
+if(response.status===408){
+  navigate('/login')
+ 
+}
+else{
+  cartItemData(cartId);
+}
+}catch(error){
+  console.log(error);
+  
+}
+ }
+ useEffect(()=>{
+  userAuthenticateFunction()
+    },[])
+useEffect(() => {
+  totalItemFunction();
+}, [cartItem]);
+useEffect(() => {
+  totalPriceValue();
+}, [cartItem]);
+
+ 
   return (
     <div style={{ backgroundColor: "#fff", padding: "5rem 0rem" }}>
        <ToastContainer style={{fontSize:"1.5rem"}}/>

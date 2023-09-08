@@ -5,7 +5,7 @@ import image from "./image/flip8.jpg"
 
 
 const Logout = () => {
-    const {state,dispatch}=useContext(AppContext);
+    const {state,dispatch,cartItem,cartDtspatch}=useContext(AppContext);
 const navigate=useNavigate();
 const logoutFunction=async()=>{
     try{
@@ -18,6 +18,7 @@ const response=await fetch("/logout",{
 })
 const data=await response.json();
 dispatch({type:"USER",payload:false})
+cartDtspatch({type:"LOGOUT_DATA"})
 navigate("/login")
     }catch(error){
         console.log(error)

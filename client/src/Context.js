@@ -15,6 +15,7 @@ const initialCart = {
   cartItem: [],
   totalItem: 0,
   totalPrice: 0,
+  
 };
 const initialSearch = {
   searchData: [],
@@ -36,7 +37,7 @@ const AppProvider = ({ children }) => {
     initialSearch
   );
 
-  console.log(searchState.successData);
+  
   const filterFunctionData = (itemId) => {
     apiDispatch({ type: "FILTER_DATA", payload: itemId });
   };
@@ -112,7 +113,9 @@ const AppProvider = ({ children }) => {
     searchDispatch({ type: "MOBLIE_FILTER", payload: value });
   };
 
+
   const paymentAddFunction = async () => {
+    
     const blankarray = [];
     const data = cartState.cartItem.map((curr) => {
       const myData = curr.map((current) => {
@@ -128,7 +131,7 @@ const AppProvider = ({ children }) => {
       return myData;
     });
    
-
+   
   
     const stripe = await loadStripe(
       "pk_test_51NnjjuSIrhr3xwAM9fjpcaGIPWleNNg5mYWcurzJaP3qrWW6Z8l9iyHDD3BErBILjb4qEB9PEMSHUW7XADbWVVaR00Fe5ZvDOL"
