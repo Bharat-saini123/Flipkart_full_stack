@@ -1,7 +1,6 @@
 import AllApi from "../AllApi";
 
 const SearchReducer = (state, action) => {
-  
   switch (action.type) {
     case "SEARCH_DATA": {
       const name = action.payload.target.name;
@@ -23,19 +22,15 @@ const SearchReducer = (state, action) => {
         return data;
       });
 
-     
       return {
         ...state,
         searchData: AllArray,
-       
       };
     }
 
     case "SEARCHBY_NAME": {
-     
-
       const value = action.payload;
-     
+
       const data = state.searchData;
       if (value === "min-price") {
         const myData = data.map((curr) => {
@@ -51,7 +46,6 @@ const SearchReducer = (state, action) => {
         return {
           ...state,
           searchData: myData,
-         
         };
       }
       if (value === "max-price") {
@@ -68,7 +62,6 @@ const SearchReducer = (state, action) => {
         return {
           ...state,
           searchData: myData,
-        
         };
       }
       if (value === "a-z") {
@@ -85,7 +78,6 @@ const SearchReducer = (state, action) => {
         return {
           ...state,
           searchData: myData,
-          
         };
       }
       if (value === "z-a") {
@@ -102,646 +94,600 @@ const SearchReducer = (state, action) => {
         return {
           ...state,
           searchData: myData,
-         
-        
         };
       }
     }
 
-    case "MOBLIE_FILTER":{
-      const value=action.payload
-      if(value==="mi"){
+    case "MOBLIE_FILTER": {
+      const value = action.payload;
+      if (value === "mi") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="mi";
+              return current.category === "mi";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="vivo"){
+      if (value === "vivo") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="vivo";
+              return current.category === "vivo";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="infix"){
+      if (value === "infix") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="infix";
+              return current.category === "infix";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="oppo"){
+      if (value === "oppo") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="oppo";
+              return current.category === "oppo";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="realme"){
+      if (value === "realme") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="realme";
+              return current.category === "realme";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="samsung"){
+      if (value === "samsung") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="samsung";
+              return current.category === "samsung";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="camera"){
+      if (value === "camera") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="camera";
+              return current.category === "camera";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="laptop"){
+      if (value === "laptop") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="laptop";
+              return current.category === "laptop";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="monitor"){
+      if (value === "monitor") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="monitor";
+              return current.category === "monitor";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="speaker"){
+      if (value === "speaker") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="speaker";
+              return current.category === "speaker";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="causaulman"){
+      if (value === "causaulman") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="causaulman";
+              return current.category === "causaulman";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="formalman"){
+      if (value === "formalman") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="formalman";
+              return current.category === "formalman";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="mantshirt"){
+      if (value === "mantshirt") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="mantshirt";
+              return current.category === "mantshirt";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="mansuit"){
+      if (value === "mansuit") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="mansuit";
+              return current.category === "mansuit";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="womandress"){
+      if (value === "womandress") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="womandress";
+              return current.category === "womandress";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="womanparty"){
+      if (value === "womanparty") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="womanparty";
+              return current.category === "womanparty";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="womansort"){
+      if (value === "womansort") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="womansort";
+              return current.category === "womansort";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="winterwoman"){
+      if (value === "winterwoman") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="winterwoman";
+              return current.category === "winterwoman";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="womantop"){
+      if (value === "womantop") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="womantop";
+              return current.category === "womantop";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="casual shoes"){
+      if (value === "casual shoes") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="casual shoes";
+              return current.category === "casual shoes";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="formal shoes"){
+      if (value === "formal shoes") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="formal shoes";
+              return current.category === "formal shoes";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="sandal"){
+      if (value === "sandal") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="sandal";
+              return current.category === "sandal";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="sports shoes"){
+      if (value === "sports shoes") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="sports shoes";
+              return current.category === "sports shoes";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="boot women"){
+      if (value === "boot women") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="boot women";
+              return current.category === "boot women";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="casual women"){
+      if (value === "casual women") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="casual women";
+              return current.category === "casual women";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="heel"){
+      if (value === "heel") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="heel";
+              return current.category === "heel";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="sleeper women"){
+      if (value === "sleeper women") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="sleeper women";
+              return current.category === "sleeper women";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="ac"){
+      if (value === "ac") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="ac";
+              return current.category === "ac";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="home appliances"){
+      if (value === "home appliances") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="home appliances";
+              return current.category === "home appliances";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="microwave"){
+      if (value === "microwave") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="microwave";
+              return current.category === "microwave";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="rafigrator"){
+      if (value === "rafigrator") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="rafigrator";
+              return current.category === "rafigrator";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="tv"){
+      if (value === "tv") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="tv";
+              return current.category === "tv";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="washing Machine"){
+      if (value === "washing Machine") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="washing Machine";
+              return current.category === "washing Machine";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="diary"){
+      if (value === "diary") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="diary";
+              return current.category === "diary";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="detergent"){
+      if (value === "detergent") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="detergent";
+              return current.category === "detergent";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="vegetables"){
+      if (value === "vegetables") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="vegetables";
+              return current.category === "vegetables";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
 
-      if(value==="kitchen"){
+      if (value === "kitchen") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="kitchen";
+              return current.category === "kitchen";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="packagefood"){
+      if (value === "packagefood") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="packagefood";
+              return current.category === "packagefood";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      if(value==="personalhome"){
+      if (value === "personalhome") {
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {
-              return current.category==="personalhome";
+              return current.category === "personalhome";
             });
             return myData;
           });
           return data;
         });
-        return{
+        return {
           ...state,
           searchData: AllArray,
-  
-        }
+        };
       }
-      }
-    
-    
-  
- 
-
-
+    }
+   
   }
   return state;
 };

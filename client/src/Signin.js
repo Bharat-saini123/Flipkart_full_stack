@@ -78,11 +78,11 @@ dispatch({type:"USER",payload:true})
 
 
 <div className='user-signup-1'style={{width:"40rem",height:'3rem',fontSize:"1.5rem",display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"1rem"}}>
-<TfiEmail style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="email" placeholder='Email' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='email' name='email' value={input.email} onChange={handleinputFunction}/>
+<TfiEmail style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="email" placeholder='Email' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='email' name='email' value={input.email} onChange={handleinputFunction} autoComplete='off'/>
 </div>
 
 <div className='user-signup-1'style={{width:"40rem",height:'3rem',fontSize:"1.5rem",display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"1rem"}}>
-<AiFillLock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Password' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='password' name='password' value={input.password}  onChange={handleinputFunction}/>
+<AiFillLock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Password' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='password' name='password' value={input.password}  onChange={handleinputFunction} autoComplete='off'/>
 </div>
 
 

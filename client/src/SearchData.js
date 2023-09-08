@@ -5,102 +5,485 @@ import { FiStar } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 
 const SearchData = () => {
-  const { searchFilterData, text, searchData,filterBySection,MobileFilter,VivoMobileFilter} = useContext(AppContext);
+  const {
+    searchFilterData,
+    text,
+    searchData,
+    filterBySection,
+    MobileFilter,
+    VivoMobileFilter,
+  } = useContext(AppContext);
   useEffect(() => {
     searchFilterData();
   }, [text]);
 
-  
   return (
     <div className="main-search-data">
-      <div className="search-data">
-        <div className="box-1 search-box" style={{display:"flex",flexDirection:"column",gap:"2rem"}}>
-          <select name="" id="" style={{fontSize:'1.5rem',textTransform:'capitalize',outline:"none",marginBottom:"8rem"}} onClick={filterBySection}>
-          <option value="a-z">a-z</option>
-          <option value="z-a">z-a</option>
-          <option value="min-price">min-price</option>
-          <option value="max-price">max-price</option>
+      <div className="search-data" >
+        <div
+          className="box-1 search-box"
+          style={{ display: "flex", flexDirection: "column", gap: "2rem" }}
+        >
+          <select
+            name=""
+            id=""
+            style={{
+              fontSize: "1.5rem",
+              textTransform: "capitalize",
+              outline: "none",
+              marginBottom: "8rem",
+            }}
+            onClick={filterBySection}
+          >
+            <option value="a-z">a-z</option>
+            <option value="z-a">z-a</option>
+            <option value="min-price">min-price</option>
+            <option value="max-price">max-price</option>
           </select>
-         <p style={{textTransform:"capitalize",textAlign:"center",fontWeight:"500",fontSize:"2rem"}}>Mobiles</p> 
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"mi"}>Mi Mobiles</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"vivo"}>Vivo Mobiles</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"infix"}>Infix Mobiles</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"oppo"}>Oppo Mobiles</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"realme"}>Realme Mobiles</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"samsung"}>Samsung Mobiles</button>
-   <hr />
-   <p style={{textTransform:"capitalize",textAlign:"center",fontWeight:"500",fontSize:"2rem"}}>Electronics</p> 
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"camera"}>Camera </button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"laptop"}>Laptop </button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"monitor"}>Monitor</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"speaker"}>Speaker</button>
-   <hr />
-   <p style={{textTransform:"capitalize",textAlign:"center",fontWeight:"500",fontSize:"2rem"}}>Fashion</p> 
-   <p style={{textTransform:"capitalize",textAlign:"center",fontWeight:"500",fontSize:"1.5rem"}}>For Man</p> 
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"causaulman"}>Casaual Man</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"formalman"}>Formal Man </button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"mantshirt"}>Man T-shirt</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"mansuit"}>Man Suit</button>
-    <p style={{textTransform:"capitalize",textAlign:"center",fontWeight:"500",fontSize:"1.5rem",marginTop:"2rem"}}>For Woman</p> 
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"womandress"}>Dress</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"womanparty"}>Party Woman </button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"womansort"}>Sort</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"winterwoman"}>Winter Dress</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"womantop"}>Top</button>
-   <hr />
-   <p style={{textTransform:"capitalize",textAlign:"center",fontWeight:"500",fontSize:"2rem"}}>FootWear</p> 
-   <p style={{textTransform:"capitalize",textAlign:"center",fontWeight:"500",fontSize:"1.5rem"}}>For Man</p> 
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"casual shoes"}>Casaual Shoes</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"formal shoes"}>Formal Shoes </button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"sandal"}>Sandal</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"sports shoes"}>Sports Shoes</button>
-    <p style={{textTransform:"capitalize",textAlign:"center",fontWeight:"500",fontSize:"1.5rem",marginTop:"2rem"}}>For Woman</p> 
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"boot women"}>Boot</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"casual women"}>Casual Woman </button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"heel"}>Heel</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"sleeper women"}>Sleeper</button>
-   <hr />
-   <p style={{textTransform:"capitalize",textAlign:"center",fontWeight:"500",fontSize:"2rem"}}>Appliances</p> 
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"ac"}>AC </button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"home appliances"}>Home Appliances</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"microwave"}>Microwave</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"rafigrator"}>Rafigrator</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"tv"}>Tv</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"washing Machine"}>Washing Machine</button>
-   <hr />
-   <p style={{textTransform:"capitalize",textAlign:"center",fontWeight:"500",fontSize:"2rem"}}>Grocery</p> 
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"diary"}>Diary</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"detergent"}>Detergent</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"vegetables"}>Vegetables</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"kitchen"}>Kitchen</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"packagefood"}>Pacakege food</button>
-    <button className="btn-info btn" style={{fontSize:'1.5rem'}} onClick={MobileFilter} value={"personalhome"}>Personal Home</button>
+          <p
+            style={{
+              textTransform: "capitalize",
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "2rem",
+            }}
+          >
+            Mobiles
+          </p>
+          <button
+            className="btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"mi"}
+          >
+            Mi Mobiles
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"vivo"}
+          >
+            Vivo Mobiles
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"infix"}
+          >
+            Infix Mobiles
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"oppo"}
+          >
+            Oppo Mobiles
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"realme"}
+          >
+            Realme Mobiles
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"samsung"}
+          >
+            Samsung Mobiles
+          </button>
+          <hr />
+          <p
+            style={{
+              textTransform: "capitalize",
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "2rem",
+            }}
+          >
+            Electronics
+          </p>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"camera"}
+          >
+            Camera{" "}
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"laptop"}
+          >
+            Laptop{" "}
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"monitor"}
+          >
+            Monitor
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"speaker"}
+          >
+            Speaker
+          </button>
+          <hr />
+          <p
+            style={{
+              textTransform: "capitalize",
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "2rem",
+            }}
+          >
+            Fashion
+          </p>
+          <p
+            style={{
+              textTransform: "capitalize",
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "1.5rem",
+            }}
+          >
+            For Man
+          </p>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"causaulman"}
+          >
+            Casaual Man
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"formalman"}
+          >
+            Formal Man{" "}
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"mantshirt"}
+          >
+            Man T-shirt
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"mansuit"}
+          >
+            Man Suit
+          </button>
+          <p
+            style={{
+              textTransform: "capitalize",
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "1.5rem",
+              marginTop: "2rem",
+            }}
+          >
+            For Woman
+          </p>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"womandress"}
+          >
+            Dress
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"womanparty"}
+          >
+            Party Woman{" "}
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"womansort"}
+          >
+            Sort
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"winterwoman"}
+          >
+            Winter Dress
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"womantop"}
+          >
+            Top
+          </button>
+          <hr />
+          <p
+            style={{
+              textTransform: "capitalize",
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "2rem",
+            }}
+          >
+            FootWear
+          </p>
+          <p
+            style={{
+              textTransform: "capitalize",
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "1.5rem",
+            }}
+          >
+            For Man
+          </p>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"casual shoes"}
+          >
+            Casaual Shoes
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"formal shoes"}
+          >
+            Formal Shoes{" "}
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"sandal"}
+          >
+            Sandal
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"sports shoes"}
+          >
+            Sports Shoes
+          </button>
+          <p
+            style={{
+              textTransform: "capitalize",
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "1.5rem",
+              marginTop: "2rem",
+            }}
+          >
+            For Woman
+          </p>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"boot women"}
+          >
+            Boot
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"casual women"}
+          >
+            Casual Woman{" "}
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"heel"}
+          >
+            Heel
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"sleeper women"}
+          >
+            Sleeper
+          </button>
+          <hr />
+          <p
+            style={{
+              textTransform: "capitalize",
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "2rem",
+            }}
+          >
+            Appliances
+          </p>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"ac"}
+          >
+            AC{" "}
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"home appliances"}
+          >
+            Home Appliances
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"microwave"}
+          >
+            Microwave
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"rafigrator"}
+          >
+            Rafigrator
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"tv"}
+          >
+            Tv
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"washing Machine"}
+          >
+            Washing Machine
+          </button>
+          <hr />
+          <p
+            style={{
+              textTransform: "capitalize",
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "2rem",
+            }}
+          >
+            Grocery
+          </p>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"diary"}
+          >
+            Diary
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"detergent"}
+          >
+            Detergent
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"vegetables"}
+          >
+            Vegetables
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"kitchen"}
+          >
+            Kitchen
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"packagefood"}
+          >
+            Pacakege food
+          </button>
+          <button
+            className="btn-info btn btn-light bounce-top"
+            style={{ fontSize: "1.5rem" }}
+            onClick={MobileFilter}
+            value={"personalhome"}
+          >
+            Personal Home
+          </button>
+        </div>
 
+        <div className="my-one-item-box-2 my-one-item-box">
+          {searchData.map((curr) => {
+            const data = curr.map((current) => {
+              const oneItemData = current.map((currData) => {
+                const Rating = Number(currData.rating);
 
-          </div>
-
-          <div className="my-one-item-box-2 my-one-item-box">
-            {searchData.map((curr) => {
-              const data = curr.map((current) => {
-                const oneItemData = current.map((currData) => {
-                  const Rating = Number(currData.rating);
-
-                  const StarData = Array.from({ length: 5 }, (c, index) => {
-                    return (
-                      <span key={index}>
-                        {Rating >= index + 1 ? (
-                          <FaStar className="icon-star" />
-                        ) : Rating >= index + 0.5 ? (
-                          <FaStarHalfAlt className="icon-star" />
-                        ) : (
-                          <FiStar className="icon-star" />
-                        )}
-                      </span>
-                    );
-                  });
-                  const myname = currData.name;
-                  const shortName = myname.slice(0, 60);
+                const StarData = Array.from({ length: 5 }, (c, index) => {
                   return (
+                    <span key={index}>
+                      {Rating >= index + 1 ? (
+                        <FaStar className="icon-star" />
+                      ) : Rating >= index + 0.5 ? (
+                        <FaStarHalfAlt className="icon-star" />
+                      ) : (
+                        <FiStar className="icon-star" />
+                      )}
+                    </span>
+                  );
+                });
+                const myname = currData.name;
+                const shortName = myname.slice(0, 60);
+                return (
+                  <div>
                     <NavLink
                       to={`${currData.name}/${currData.id}`}
                       style={{ textDecoration: "none", color: "black" }}
@@ -300,14 +683,14 @@ const SearchData = () => {
                       </div>
                       <hr />
                     </NavLink>
-                  );
-                });
-                return oneItemData;
+                  </div>
+                );
               });
-              return data;
-            })}
-          </div>
-       
+              return oneItemData;
+            });
+            return data;
+          })}
+        </div>
       </div>
     </div>
   );

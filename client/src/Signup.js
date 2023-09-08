@@ -97,22 +97,22 @@ if(response.status===200){
 <div className='user-signup-page' style={{padding:"5rem 7rem 5rem 5rem ",borderRadius:'5rem',border:"0.1rem solid #fff"}}>
 
 <div className='user-signup-1'style={{width:"40rem",height:'3rem',fontSize:"1.5rem",display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"1rem"}}>
-   <AiOutlineUser style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem",}}/> <input type="text" placeholder='Firstname' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='firstname' name='firstname' value={input.firstname} onChange={changeInput}/>
+   <AiOutlineUser style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem",}}/> <input type="text" placeholder='Firstname' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='firstname' name='firstname' value={input.firstname} onChange={changeInput} autoComplete='off'/>
 </div>
 <div className='user-signup-1'style={{width:"40rem",height:'3rem',fontSize:"1.5rem",display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"1rem"}}>
-   <AiOutlineUser style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="text" placeholder='Lastname' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='lastname' name='lastname' value={input.lastname} onChange={changeInput}/>
+   <AiOutlineUser style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="text" placeholder='Lastname' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='lastname' name='lastname' value={input.lastname} onChange={changeInput} autoComplete='off'/>
 </div>
 <div className='user-signup-1'style={{width:"40rem",height:'3rem',fontSize:"1.5rem",display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"1rem"}}>
-   <TfiEmail style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="email" placeholder='Email' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='email' name='email' value={input.email} onChange={changeInput}/>
+   <TfiEmail style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="email" placeholder='Email' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='email' name='email' value={input.email} onChange={changeInput} autoComplete='off'/>
 </div>
 <div className='user-signup-1'style={{width:"40rem",height:'3rem',fontSize:"1.5rem",display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"1rem"}}>
-   <BiSolidPhoneCall style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="number" placeholder='Phone' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='phone' name='phone' value={input.phone} onChange={changeInput}/>
+   <BiSolidPhoneCall style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="number" placeholder='Phone' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='phone' name='phone' value={input.phone} onChange={changeInput} autoComplete='off'/>
 </div>
 <div className='user-signup-1'style={{width:"40rem",height:'3rem',fontSize:"1.5rem",display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"1rem"}}>
-   <AiFillLock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Password' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='password' name='password' value={input.password} onChange={changeInput}/>
+   <AiFillLock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Password' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='password' name='password' value={input.password} onChange={changeInput} autoComplete='off'/>
 </div>
 <div className='user-signup-1'style={{width:"40rem",height:'3rem',fontSize:"1.5rem",display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"1rem"}}>
-   <AiFillUnlock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Confirmpassword' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='confirmpassword' name='confirmpassword' value={input.confirmpassword} onChange={changeInput}/>
+   <AiFillUnlock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Confirmpassword' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='confirmpassword' name='confirmpassword' value={input.confirmpassword} onChange={changeInput} autoComplete='off'/>
 </div>
 
 

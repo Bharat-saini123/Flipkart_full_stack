@@ -13,6 +13,8 @@ import OneItem from './OneItem';
 import OneNewItems from './OneNewItems';
 import Cart from './Cart';
 import SearchData from './SearchData';
+import Success from './Success';
+import Cancel from './Cancel';
 
 
 
@@ -36,6 +38,8 @@ const App = () => {
     <Route path='/:id/:name' element={<OneItem/>}/>
     <Route path='/:id/:name/:onenew' element={<OneNewItems/>}/>
     <Route path='/:id/:name/:onenew/:cartId' element={<Cart/>}/>
+    <Route path='/success' element={<Success/>}/>
+    <Route path='/cancel' element={<Cancel/>}/>
 
     
     

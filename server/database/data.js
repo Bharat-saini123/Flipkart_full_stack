@@ -54,17 +54,7 @@ type:String
     }
   ],
 
-    totalItem:{
-      type:Number,
-      trim:true
-    },
-    totalPrice:{
-      type:Number,
-      trim:true
-    },cartItem:{
-      type:Array,
-      trim:true
-    }
+   
 
   }
 

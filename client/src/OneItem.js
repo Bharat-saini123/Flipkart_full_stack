@@ -12,7 +12,7 @@ const OneItem = () => {
     OneFilterFunction(name);
   }, []);
   return (
-    <div style={{ marginTop: "5rem" }} className="my-top-one-item-box">
+    <div  className="my-top-one-item-box">
       <div className="my-one-item-box-2 my-one-item-box">
         {oneItem.map((curr) => {
           const data = curr.map((current) => {

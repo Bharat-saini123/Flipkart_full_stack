@@ -1,6 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { AppContext } from "./Context";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   AiOutlineShoppingCart,
   AiOutlinePlus,
@@ -22,7 +25,8 @@ const Cart = () => {
     totalItem,
     totalPriceValue,
     totalPrice,
-    userLoginMyFunction,
+    paymentAddFunction
+   
   } = useContext(AppContext);
 
   useEffect(() => {
@@ -33,9 +37,11 @@ const Cart = () => {
   }, [cartItem]);
   useEffect(() => {
     cartItemData(cartId);
+   
   }, []);
   return (
     <div style={{ backgroundColor: "#fff", padding: "5rem 0rem" }}>
+       <ToastContainer style={{fontSize:"1.5rem"}}/>
       <div className="container">
         <div>
           <div
@@ -66,11 +72,38 @@ const Cart = () => {
               </span>
             </div>
           </div>
-          <hr />
+         <div style={{fontSize:"1.5rem",fontWeight:"300",margin:"2rem 0rem"}}>There are total <span style={{fontSize:"1.5rem",fontWeight:"500"}}>{totalItem}</span> items in the cart</div>
         </div>
-        <div style={{ padding: "5rem", height: "30rem", overflowY: "scroll" }}>
+        {
+          cartItem.length===0||cartItem===undefined?"":
+          <div  className="head-cart-items" style={{padding:" 0rem 5rem"}}>
+          <div className="box-1" style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+Items
+          </div>
+          <div className="box-2" style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+            name
+            </div>
+            <div className="box-3"style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+            quantity
+            </div>
+            <div className="box-4" style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+            price
+            </div>
+            <div className="box-5"style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+            Total Price
+            </div>
+            <div className="box-6" style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+            Remove
+            </div>
+            
+        </div>
+        }
+  
+    
+        <div style={{ padding: "1rem 5rem", height: "30rem", overflowY: "scroll" }}>
+          <hr />
           <div className="my-cart-top-box">
-            {cartItem === [] || cartItem.length === 0 || cartItem === undefined
+            { cartItem.length === 0 || cartItem === undefined
               ? ""
               : cartItem.map((curr) => {
                   const data = curr.map((current) => {
@@ -207,7 +240,21 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <div className="buttons-cart container" style={{ marginTop: "2rem" }}>
+      <div className="buttons-cart container" style={{ display:"flex",justifyContent:"space-between" ,alignItems:"center"}}>
+
+      <div style={{marginLeft:"5rem",padding:"5rem",width:"50rem"}}>
+        <div
+          className="total-price container-md"
+          style={{
+            fontSize: "3rem",
+            fontWeight: "500",
+            textTransform: "capitalize",
+            
+          }}
+        >
+          {`Total-price = ${totalPrice}`}
+        </div>
+      </div>
         <div
           style={{
             display: "flex",
@@ -226,9 +273,9 @@ const Cart = () => {
               textTransform: "capitalize",
             }}
             className="btn btn-primary"
-            onClick={userLoginMyFunction}
+            onClick={paymentAddFunction}
           >
-            Add cart
+            Payment
           </button>
           <button
             type="button"
@@ -244,18 +291,7 @@ const Cart = () => {
           </button>
         </div>
       </div>
-      <div>
-        <div
-          className="total-price container-md"
-          style={{
-            fontSize: "3rem",
-            fontWeight: "500",
-            textTransform: "capitalize",
-          }}
-        >
-          {`Total-price = ${totalPrice}`}
-        </div>
-      </div>
+     
     </div>
   );
 };

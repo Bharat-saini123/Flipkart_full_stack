@@ -3,6 +3,10 @@ const bcrypt=require("bcrypt");
 const path=require("path");
 const Auth=require("../middleware/Auth");
 const userFlipkart=require("../database/data.js");
+
+const stripe = require("stripe")(
+    "sk_test_51NnjjuSIrhr3xwAM1ZgoXm2VOSwWAJZXEJrIQMxtY6RHDu7lAmFSQCROlvfGW8aRMdAO8RZnQNLtmuuLDnSFPRwN00rYd1qidi"
+  );
 const router=express.Router();
 
 
@@ -98,15 +102,33 @@ response.status(412).json("your password is incorrect")
             })
 
 
-            router.put("/cartData",Auth,async(request,response)=>{
-               const {totalItem,totalPrice,cartItem}=request.body;
-               const user=await userFlipkart.findByIdAndUpdate({_id:request.userId},{totalItem:totalItem,totalPrice:totalPrice,cartItem:cartItem},{new:true});
-               await user.save();
-               response.status(200).json("save data")
-       console.log(user)
+            router.post("/api/create-checkout-session", async (req, res) => {
+                const product = req.body.product;
+                
+              
+                const lineItems=product.map((product)=>({
+                    price_data:{
+                        currency:"inr",
+                            product_data:{
+                    name:product.name
+                            },
+                            unit_amount:product.price*100
+                        
+                    },quantity:product.quantity
+                      }))
+              
+                const session = await stripe.checkout.sessions.create({
+                  payment_method_types:["card"],
+                  line_items:lineItems,
+                  mode:"payment",
+                  success_url:`http://localhost:3000/success`,
+                  cancel_url:`http://localhost:3000/cancel`,
+                });
+              
+                res.json({ id:session.id });
+              });
             
-         
-        })
+        
 
 
 router.get("/logout",(request,response)=>{
