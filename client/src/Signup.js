@@ -71,7 +71,9 @@ if(response.status===416){
     })
 }
 if(response.status===200){
-  
+    toast.success("you sucessful created Account",{
+        autoClose: 2000,
+    })
     setInput({
         firstname:"",
         lastname:"",
@@ -82,7 +84,7 @@ if(response.status===200){
     })
     
  
-    window.alert("you Sucessfully create account")
+
     navigate("/login")
 
 }

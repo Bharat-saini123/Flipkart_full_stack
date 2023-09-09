@@ -101,6 +101,15 @@ response.status(412).json("your password is incorrect")
       console.log(user)
             })
 
+            router.delete("/deleteAccount",Auth,async(request,response)=>{
+                console.log(request.body);
+                const user=await userFlipkart.findByIdAndDelete({_id:request.userId});
+             
+                response.status(200).json("delete data");
+              
+              
+            })
+
 
             router.post("/api/create-checkout-session", async (req, res) => {
                 const product = req.body.product;

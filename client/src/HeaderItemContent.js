@@ -24,14 +24,14 @@ const HeaderItemContent = ({ data }) => {
               <div className="images">
                 <figure  className="figure-header-item-component">
                   <img
-                    src={currElement.image}
+                    src={currElement.image===undefined?"":currElement.image}
                     alt=""
                     style={{ width: "100%", height: "100%",objectFit:"contain",objectPosition:"center" }}
                   />
                 </figure>
               </div>
               <div style={{ fontSize: "1.5rem", fontWeight: "500"}}>
-                {currElement.name.length>50?`${newName}...`:currElement.name}
+                {currElement.name===undefined?"":currElement.name.length>50?`${newName}...`:currElement.name}
               </div>
               <div
                 style={{
@@ -42,7 +42,7 @@ const HeaderItemContent = ({ data }) => {
                 }}
               >
                 <div style={{ fontSize: "2rem", fontWeight: "500" }}>
-                <span>	&#8377;</span> {currElement.price}
+                <span>	&#8377;</span> {currElement.price===undefined?"":currElement.price}
                 </div>
                 <div
                   style={{
@@ -53,7 +53,7 @@ const HeaderItemContent = ({ data }) => {
                    
                   }}
                 >
-                 <span>	&#8377;</span><span >{`${currElement.cprice}`}</span> 
+                 <span>	&#8377;</span><span >{currElement.cprice===undefined?"":currElement.cprice}</span> 
                 </div>
               </div>
             </div>

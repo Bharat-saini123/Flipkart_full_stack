@@ -13,7 +13,7 @@ import { AppContext } from "./Context";
 
 const About = () => {
   const navigate=useNavigate();
-  const {state,dispatch}=useContext(AppContext);
+  const {state,dispatch,cartDtspatch}=useContext(AppContext);
   const [myName, setMyName] = useState("");
   const [input, setInput] = useState({
     firstname: "",
@@ -120,8 +120,8 @@ const About = () => {
     e.preventDefault();
     imageRef.current.click();
   };
-  const sendImage = async (e) => {
-    e.preventDefault();
+  const sendImage = async () => {
+   
     const formData = new FormData();
     formData.append("image", image);
     try {
@@ -179,6 +179,35 @@ if(response.status===200){
   console.log(error)
 }
   }
+
+  const deleteAccountFunction=async()=>{
+try{
+const response=await fetch("/deleteAccount",{
+  method:"delete",
+  headers:{
+    Accept:"application/json",
+    "Content-Type":"application/json"
+  },credentials:"include"
+})
+
+const data=await response.json();
+console.log(data);
+console.log(response.status)
+
+toast.warning("your account has been deleteed", {
+  position: "top-left",
+  autoClose: 1000,
+  })
+dispatch({type:"USER",payload:false})
+cartDtspatch({type:"LOGOUT_DATA"})
+navigate("/login")
+
+}catch(error){
+  console.log(error)
+}
+  }
+
+
   useEffect(() => {
     userGetData();
   }, [myName]);
@@ -222,7 +251,25 @@ if(response.status===200){
               {input.img === null ||
               input.img === "" ||
               input.img === undefined ? (
-                ""
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    position: "absolute",
+                    top: "1rem",
+                    right: "7.5rem",
+                  }}
+                  onClick={imageFunction}
+                >
+                <img
+                src="./images/user.jpg"
+                height={130}
+                width={130}
+                style={{ borderRadius: "50%" ,cursor:"pointer"}}
+              />
+              </div>
               ) : (
                 <div
                   style={{
@@ -390,13 +437,15 @@ if(response.status===200){
                 />
                <span style={{ fontSize: "2rem",fontWeight:"500",textTransform:"uppercase" }} >log out</span>
                </div>
-             
+          
              
              
             
             </div>
             
 <hr/>
+<div style={{textAlign:"center"}}> <button className="btn btn-primary" style={{fontSize:"1.5rem"}} onClick={deleteAccountFunction}>Delete Account</button></div>
+
             
           </div>
         </div>

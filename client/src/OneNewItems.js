@@ -54,7 +54,7 @@ return <span key={index}>
                             key={i}
                           >
                             <img
-                              src={imageData.image}
+                              src={imageData.image===undefined?"":imageData.image}
                               alt=""
                               style={{ width: "100%", height: "100%",objectFit:"contain",objectPosition:"center" }}
                               onMouseOver={() => setChange(i)}
