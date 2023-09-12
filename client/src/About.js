@@ -225,9 +225,10 @@ navigate("/login")
         }}
       />
       <div className="main-box-about-page main-grid-box-about-page">
-        <div className="box-1-about-page about-page-grid-boxes" >
+        <div className="box-1-about-page about-page-grid-boxes"  >
           <div
             className="box-1-about-page-abouts"
+            
             style={{ position: "relative" }}
           >
             <input

@@ -472,6 +472,7 @@ const SearchData = () => {
           {searchData.map((curr) => {
             const data = curr.map((current) => {
               const oneItemData = current.map((currData) => {
+          
                 const Rating = Number(currData.rating);
 
                 const StarData = Array.from({ length: 5 }, (c, index) => {
@@ -489,10 +490,12 @@ const SearchData = () => {
                 });
                 const myname = currData.name;
                 const shortName = myname.slice(0, 60);
+                
                 return (
+                 
                   <div>
                     <NavLink
-                      to={`${currData.name}/${currData.id}`}
+                      to={`name/${currData.id}`}
                       style={{ textDecoration: "none", color: "black" }}
                     >
                       <div>

@@ -7,7 +7,7 @@ import { FiStar } from "react-icons/fi";
 const OneItem = () => {
   const { name } = useParams();
   const { OneFilterFunction, oneItem } = useContext(AppContext);
-  console.log(oneItem);
+  // console.log(oneItem);
   useEffect(() => {
     OneFilterFunction(name);
   }, []);
@@ -37,7 +37,7 @@ const OneItem = () => {
               return (
                 <NavLink
                   to={`${currData.id}`}
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{ textDecoration: "none", color: "black"}}
                 >
                   <div>
                     <div className="box-2">

@@ -1742,7 +1742,7 @@ const SearchReducer = (state, action) => {
           });
           return data;
         });
-        console.log(AllArray);
+        // console.log(AllArray);
         return {
           ...state,
           searchData: AllArray,
