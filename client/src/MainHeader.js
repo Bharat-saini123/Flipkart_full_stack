@@ -4,7 +4,7 @@ import Search from './Search'
 
 const Header = () => {
   return (
-   <div className="main-header bg-primary" style={{display:"flex",justifyContent:"center",alignItems:"center",padding:"1.5rem 3rem",}}>
+   <div className="main-header-all-box bg-primary" >
 <Search/>
 <Navbar/>
 

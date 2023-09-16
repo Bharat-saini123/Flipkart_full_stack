@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 
 const HeaderItemContent = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <div className="main-item-content-header-box" style={{ gap: "1rem" }}>
       {data.map((currElement, index) => {
@@ -12,7 +12,7 @@ const HeaderItemContent = ({ data }) => {
 
         return (
           <NavLink to={`${currElement.id}/${currElement.category}/${currElement.id}`} style={{textDecoration:"none",color:"black",border: "0.5px solid rgba(128, 128, 128, 0.39)",
-          borderRadius: "1rem",}}>
+          borderRadius: "1rem",}} key={currElement.id}>
           <div
             className="header-content-items"
             key={currElement.id}

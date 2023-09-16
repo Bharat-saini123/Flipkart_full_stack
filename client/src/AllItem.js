@@ -41,6 +41,7 @@ const AllItem = ({ propsItem }) => {
                       
                     
                     }}
+                    key={current.id}
                   >
                    <div style={{display:"flex",justifyContent:'space-between',alignItems:"center"}}>
                       <span

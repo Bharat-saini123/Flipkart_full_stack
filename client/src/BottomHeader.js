@@ -46,22 +46,22 @@ const BottomHeader = () => {
       <HeaderListTypeContent data={SamsungApi} />
 
       <div style={{margin:"2rem 0rem"}}>
-        <figure style={{ width: "100vw", height: "95vh" }}>
+        <figure  className="bottom-header-figure">
           <img
             src="./images/flip6.jpg"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            
           />
         </figure>
       </div>
       <HeaderListTypeContent data={MonitorApi} />
       <HeaderListTypeContent data={Laptop} />
       <div style={{margin:"2rem 0rem"}}>
-        <figure style={{ width: "100vw", height: "95vh" }}>
+        <figure className="bottom-header-figure">
           <img
             src="./images/flip4.jpg"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            
           />
         </figure>
       </div>
@@ -71,11 +71,11 @@ const BottomHeader = () => {
       <HeaderListTypeContent data={SuitApi} />
       <HeaderListTypeContent data={CausaualShirtApi} />
       <div style={{margin:"2rem 0rem"}}>
-        <figure style={{ width: "100vw", height: "95vh" }}>
+        <figure className="bottom-header-figure">
           <img
             src="./images/flip9.jpg"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            
           />
         </figure>
       </div>
@@ -85,11 +85,11 @@ const BottomHeader = () => {
       <HeaderListTypeContent data={Refrigrator} />
       <HeaderListTypeContent data={Washing} />
       <HeaderListTypeContent data={Microwave} />
-      <figure style={{ width: "100vw", height: "90vh" }} >
+      <figure className="bottom-header-figure" >
           <img
             src="./images/flip11.jpg"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            
           />
         </figure>
         <HeaderListTypeContent data={SportsShoesApi} />
@@ -98,21 +98,21 @@ const BottomHeader = () => {
         <HeaderListTypeContent data={HeelsApi} />
         <HeaderListTypeContent data={FlatSleeper} />
         <HeaderListTypeContent data={CasualWoman} />
-        <figure style={{ width: "100vw", height: "95vh" }}>
+        <figure className="bottom-header-figure">
           <img
             src="./images/flip13.jpg"
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover",objectPosition:"top" }}
+            
           />
         </figure>
         <HeaderListTypeContent data={Remote} />
         <HeaderListTypeContent data={Cricket} />
         <HeaderListTypeContent data={Fitness} />
-        <figure style={{ width: "100vw", height: "130vh" }}>
+        <figure className="bottom-header-figure">
           <img
             src="./images/flip7.jpg"
             alt=""
-            style={{ width: "100%", height: "100%" ,objectFit: "cover",objectPosition:"top" }}
+            
           />
         </figure>
         <HeaderListTypeContent data={Tools} />

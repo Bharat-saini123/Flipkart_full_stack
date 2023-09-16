@@ -15,7 +15,7 @@ const verifyUser= jsonwebtoken.verify(token,process.env.SECRET_CODE);
 
 const userFound=await userFlipkart.findOne({_id:verifyUser._id})
 if(!userFound){
-    response.status(404).jsno("user not found")
+    response.status(404).json("user not found")
 }
 
 request.token=token;

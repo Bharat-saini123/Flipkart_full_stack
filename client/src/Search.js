@@ -20,7 +20,7 @@ const Search = () => {
   return (
    <div className="main-search" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
 
-<NavLink style={{width:"50rem",height:"3rem",marginRight:"1rem",textDecoration:"none"}} to={`/search`}><input type="text" placeholder='Search for products,brands and more' style={{width:"100%",height:"100%",outline:"none",border:"none",display:"block",padding:"0.5rem 1.5rem",fontSize:'1.5rem',borderRadius:"1rem"}} name='text' id='search' value={text}  onChange={SearchChangeFunction} autoComplete='off'/></NavLink>
+<NavLink style={{marginRight:"1rem",textDecoration:"none"}} to={`/search`} className={"search-box-all-items"}><input type="text" placeholder='Search for products,brands and more'  name='text' id='search' value={text}  onChange={SearchChangeFunction} autoComplete='off'/></NavLink>
 
 <MenuData/>
 

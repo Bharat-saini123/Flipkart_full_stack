@@ -143,7 +143,7 @@ Items
                         const NewName = elementName.slice(0, 20);
 
                         return (
-                          <div>
+                          <div key={ElementData.id}>
                             <div
                               className="main-shopping-item-card"
                               key={ElementData.id}

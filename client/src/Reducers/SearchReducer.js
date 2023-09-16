@@ -1732,7 +1732,7 @@ const SearchReducer = (state, action) => {
           searchData: data,
         };
       } else {
-        console.log("else");
+        
         const AllArray = AllApi.map((curr) => {
           const data = curr.array.map((currData) => {
             const myData = currData.filter((current) => {

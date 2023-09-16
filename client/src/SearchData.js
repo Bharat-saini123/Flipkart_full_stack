@@ -493,7 +493,7 @@ const SearchData = () => {
                 
                 return (
                  
-                  <div>
+                  <div key={currData.id}>
                     <NavLink
                       to={`name/${currData.id}`}
                       style={{ textDecoration: "none", color: "black" }}

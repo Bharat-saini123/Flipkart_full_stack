@@ -5,15 +5,15 @@ import { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BsFillFolderSymlinkFill } from "react-icons/bs";
-import {FaUserAlt } from "react-icons/fa";
-import { MdPayments,MdPermContactCalendar } from "react-icons/md";
+import { FaUserAlt } from "react-icons/fa";
+import { MdPayments, MdPermContactCalendar } from "react-icons/md";
 import { AiOutlineLogout } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "./Context";
 
 const About = () => {
-  const navigate=useNavigate();
-  const {state,dispatch,cartDtspatch}=useContext(AppContext);
+  const navigate = useNavigate();
+  const { state, dispatch, cartDtspatch } = useContext(AppContext);
   const [myName, setMyName] = useState("");
   const [input, setInput] = useState({
     firstname: "",
@@ -121,7 +121,6 @@ const About = () => {
     imageRef.current.click();
   };
   const sendImage = async () => {
-   
     const formData = new FormData();
     formData.append("image", image);
     try {
@@ -157,56 +156,56 @@ const About = () => {
       console.log(error);
     }
   };
-  const myLogout=async()=>{
-try{
-const response=await fetch("/logout",{
-  method:"get",
-  headers:{
-Accept:"application/json",
-"Content-Type":"application/json"
-  },credentials:"include"
-})
-const data=await response.json();
-if(response.status===200){
-  toast.success("you successful logout", {
-    position: "top-left",
-    autoClose: 1000,
-    })
-  dispatch({type:"USER",payload:false})
-  navigate("/login");
-}
-}catch(error){
-  console.log(error)
-}
-  }
+  const myLogout = async () => {
+    try {
+      const response = await fetch("/logout", {
+        method: "get",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+      const data = await response.json();
+      if (response.status === 200) {
+        toast.success("you successful logout", {
+          position: "top-left",
+          autoClose: 1000,
+        });
+        dispatch({ type: "USER", payload: false });
+        navigate("/login");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  const deleteAccountFunction=async()=>{
-try{
-const response=await fetch("/deleteAccount",{
-  method:"delete",
-  headers:{
-    Accept:"application/json",
-    "Content-Type":"application/json"
-  },credentials:"include"
-})
+  const deleteAccountFunction = async () => {
+    try {
+      const response = await fetch("/deleteAccount", {
+        method: "delete",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
 
-const data=await response.json();
-console.log(data);
-console.log(response.status)
+      const data = await response.json();
+      console.log(data);
+      console.log(response.status);
 
-toast.warning("your account has been deleteed", {
-  position: "top-left",
-  autoClose: 1000,
-  })
-dispatch({type:"USER",payload:false})
-cartDtspatch({type:"LOGOUT_DATA"})
-navigate("/login")
-
-}catch(error){
-  console.log(error)
-}
-  }
-
+      toast.warning("your account has been deleteed", {
+        position: "top-left",
+        autoClose: 1000,
+      });
+      dispatch({ type: "USER", payload: false });
+      cartDtspatch({ type: "LOGOUT_DATA" });
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     userGetData();
@@ -225,10 +224,9 @@ navigate("/login")
         }}
       />
       <div className="main-box-about-page main-grid-box-about-page">
-        <div className="box-1-about-page about-page-grid-boxes"  >
+        <div className="box-1-about-page about-page-grid-boxes">
           <div
             className="box-1-about-page-abouts"
-            
             style={{ position: "relative" }}
           >
             <input
@@ -244,7 +242,14 @@ navigate("/login")
               <img
                 src={"./images/user.jpg"}
                 alt=""
-                style={{ height: "100%", width: "100%", borderRadius: "50%",cursor:"pointer",objectFit:"contain",objectPosition:"center" }}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  borderRadius: "50%",
+                  cursor: "pointer",
+                  objectFit: "contain",
+                  objectPosition: "center",
+                }}
               />
             </div>
 
@@ -260,17 +265,17 @@ navigate("/login")
                     flexDirection: "column",
                     position: "absolute",
                     top: "1rem",
-                    right: "7.5rem",
+                    right: "11rem",
                   }}
                   onClick={imageFunction}
                 >
-                <img
-                src="./images/user.jpg"
-                height={130}
-                width={130}
-                style={{ borderRadius: "50%" ,cursor:"pointer"}}
-              />
-              </div>
+                  <img
+                    src="./images/user.jpg"
+                    height={130}
+                    width={130}
+                    style={{ borderRadius: "50%", cursor: "pointer" }}
+                  />
+                </div>
               ) : (
                 <div
                   style={{
@@ -280,7 +285,7 @@ navigate("/login")
                     flexDirection: "column",
                     position: "absolute",
                     top: "1rem",
-                    right: "7.5rem",
+                    right: "11rem",
                   }}
                   onClick={imageFunction}
                 >
@@ -289,7 +294,7 @@ navigate("/login")
                     alt=""
                     height={130}
                     width={130}
-                    style={{ borderRadius: "50%" ,cursor:"pointer"}}
+                    style={{ borderRadius: "50%", cursor: "pointer" }}
                   />
                 </div>
               )}
@@ -324,134 +329,247 @@ navigate("/login")
             </div>
           </div>
           <div className="box-2-about-page-abouts">
-            <div style={{padding:"3rem"}}>
+            <div style={{ padding: "3rem" }}>
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns:"0.2fr 1fr",
-                  gap:"1rem",
-                  marginLeft:"3rem",
-                  alignItems:"center"
-            
-                  
-                  
-                  
-                  
-                  
+                  gridTemplateColumns: "0.2fr 1fr",
+                  gap: "1rem",
+                  marginLeft: "3rem",
+                  alignItems: "center",
                 }}
               >
                 <BsFillFolderSymlinkFill
                   style={{ fontSize: "2rem", marginRight: "2rem" }}
                   className="text-primary"
                 />
-                <span style={{ fontSize: "2rem",fontWeight:"500",textTransform:"uppercase" }}>My order</span>
+                <span
+                  style={{
+                    fontSize: "2rem",
+                    fontWeight: "500",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  My order
+                </span>
               </div>
-             
             </div>
             <hr />
-            <div >
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns:"0.2fr 1fr",
-                  gap:"1rem",
-                  marginLeft:"3rem",
-                  alignItems:"center"
-                }}
-              >
-                <FaUserAlt
-                  style={{ fontSize: "2rem"}}
-                  className="text-primary"
-                />
-                <span style={{ fontSize: "2rem",fontWeight:"500",textTransform:"uppercase" }}>Account Setting</span>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "0.25fr 1fr",
+                padding: "3rem",
+              }}
+            >
+              <FaUserAlt
+                style={{ fontSize: "2rem",display:"inline-block" }}
+                className="text-primary"
+              />
+
+              <div>
+                <div
+                  style={{
+                    fontSize: "2rem",
+                    fontWeight: "500",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Account Setting
+                </div>
+
+                <div
+                  style={{
+                    fontSize: "1.5rem",
+                    marginTop: "1rem",
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  }}
+                >
+                  Profile information
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.5rem",
+                    marginTop: "1rem",
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  }}
+                >
+                  Manage Address
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.5rem",
+                    marginTop: "1rem",
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  }}
+                >
+                  Pan card information
+                </div>
               </div>
-              <div style={{fontSize:"1.5rem",marginLeft:"8rem",marginTop:"1rem",textTransform:"capitalize",fontWeight:"500"}}>Profile information</div>
-              <div style={{fontSize:"1.5rem",marginLeft:"8rem",marginTop:"1rem",textTransform:"capitalize",fontWeight:"500"}}>Manage Address</div>
-              <div style={{fontSize:"1.5rem",marginLeft:"8rem",marginTop:"1rem",textTransform:"capitalize",fontWeight:"500"}}>Pan card information</div>
-              
             </div>
-            <hr/>
-            <div>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns:"0.2fr 1fr",
-                  gap:"1rem",
-                  marginLeft:"3rem",
-                  alignItems:"center"
-                }}
-              >
-                <MdPayments
-                  style={{ fontSize: "3rem" }}
-                  className="text-primary"
-                />
-                <span style={{ fontSize: "2rem",fontWeight:"500",textTransform:"uppercase"  }}>My order</span>
+            <hr />
+            <div
+              style={{
+               
+                display: "grid",
+                gridTemplateColumns: "0.25fr 1fr",
+                padding: "3rem",
+              }}
+            >
+              <MdPayments
+                style={{ fontSize: "2rem",display:"inline-block" }}
+                className="text-primary"
+              />
+
+              <div>
+                <div
+                  style={{
+                    fontSize: "2rem",
+                    fontWeight: "500",
+                    textTransform: "uppercase",
+                  }}
+                >
+                    My order
+                </div>
+
+                <div
+                  style={{
+                    fontSize: "1.5rem",
+                    marginTop: "1rem",
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  }}
+                >
+                  Gift Cards
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.5rem",
+                    marginTop: "1rem",
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  }}
+                >
+                  Saved UPI
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.5rem",
+                    marginTop: "1rem",
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  }}
+                >
+                  saved cards
+                </div>
               </div>
-              <div style={{fontSize:"1.5rem",marginLeft:"8rem",marginTop:"1rem",textTransform:"capitalize",fontWeight:"500"}}>Gift Cards</div>
-              <div style={{fontSize:"1.5rem",marginLeft:"8rem",marginTop:"1rem",textTransform:"capitalize",fontWeight:"500"}}>Saved UPI</div>
-              <div style={{fontSize:"1.5rem",marginLeft:"8rem",marginTop:"1rem",textTransform:"capitalize",fontWeight:"500"}}>saved cards</div>
-             
             </div>
-            <hr/>
-            <div >
+            <hr />
+            <div
+              style={{
+               
+                display: "grid",
+                gridTemplateColumns: "0.25fr 1fr",
+                padding: "3rem",
+              }}
+            >
+              <MdPermContactCalendar
+                style={{ fontSize: "2rem",display:"inline-block"  }}
+                className="text-primary"
+              />
+
+              <div>
+                <div
+                  style={{
+                    fontSize: "2rem",
+                    fontWeight: "500",
+                    textTransform: "uppercase",
+                  }}
+                >
+                    MY STUFF
+                </div>
+
+                <div
+                  style={{
+                    fontSize: "1.5rem",
+                    marginTop: "1rem",
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  }}
+                >
+                   my coupon
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.5rem",
+                    marginTop: "1rem",
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  }}
+                >
+                    my reviews and rating
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.5rem",
+                    marginTop: "1rem",
+                    textTransform: "capitalize",
+                    fontWeight: "400",
+                  }}
+                >
+                  all notification
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div style={{ padding: "3rem" }}>
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns:"0.2fr 1fr",
-                  gap:"1rem",
-                  marginLeft:"3rem",
-                  alignItems:"center",
-                  
-                }}
-              >
-                <MdPermContactCalendar
-                  style={{ fontSize: "3rem" }}
-                  className="text-primary"
-                />
-               <span style={{ fontSize: "2rem",fontWeight:"500",textTransform:"uppercase" }}>MY STUFF</span>
-               </div>
-             
-              <div style={{fontSize:"1.5rem",marginLeft:"8rem",marginTop:"1rem",textTransform:"capitalize",fontWeight:"500"}}>my coupon</div>
-              <div style={{fontSize:"1.5rem",marginLeft:"8rem",marginTop:"1rem",textTransform:"capitalize",fontWeight:"500"}}>my reviews and rating</div>
-              <div style={{fontSize:"1.5rem",marginLeft:"8rem",marginTop:"1rem",textTransform:"capitalize",fontWeight:"500"}}>all notification</div>
-              <div style={{fontSize:"1.5rem",marginLeft:"8rem",marginTop:"1rem",textTransform:"capitalize",fontWeight:"500"}}>my watchlist</div>
-            
-             
-            
-            </div>
-            <hr/>
-            <div style={{padding:"3rem"}}>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns:"0.2fr 1fr",
-                  gap:"1rem",
-                  marginLeft:"3rem",
-                  alignItems:"center",
-                  
+                  gridTemplateColumns: "0.2fr 1fr",
+                  gap: "1rem",
+                  marginLeft: "3rem",
+                  alignItems: "center",
                 }}
               >
                 <AiOutlineLogout
-                  style={{ fontSize: "3rem",cursor:"pointer" }}
+                  style={{ fontSize: "3rem", cursor: "pointer" }}
                   className="text-primary"
                   onClick={myLogout}
                 />
-               <span style={{ fontSize: "2rem",fontWeight:"500",textTransform:"uppercase" }} >log out</span>
-               </div>
-          
-             
-             
-            
+                <span
+                  style={{
+                    fontSize: "2rem",
+                    fontWeight: "500",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  log out
+                </span>
+              </div>
             </div>
-            
-<hr/>
-<div style={{textAlign:"center"}}> <button className="btn btn-primary" style={{fontSize:"1.5rem"}} onClick={deleteAccountFunction}>Delete Account</button></div>
 
-            
+            <hr />
+            <div >
+              {" "}
+              <button
+                className="btn btn-primary"
+                style={{ fontSize: "1.5rem",marginLeft:"6rem" }}
+                onClick={deleteAccountFunction}
+              >
+                Delete Account
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className="box-2-about-page about-page-grid-boxes" style={{paddingBottom:"5rem"}}>
+        <div
+          className="box-2-about-page about-page-grid-boxes"
+          style={{ paddingBottom: "5rem" }}
+        >
           <div className="box-1-about" style={{ padding: "3rem" }}>
             <div className="heading-box-about">
               <span
@@ -487,23 +605,12 @@ navigate("/login")
               id="user-items-about"
             >
               <div
-                className="input-1"
-                style={{ width: "30rem", height: "5rem" }}
+                className="input-1 inputs-about-page"
+                
               >
                 <input
                   type="text"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    outline: "none",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    padding: "0.5rem 1.5rem",
-                    fontSize: "1.5rem",
-                    backgroundColor: "#ededed",
-                    border: "1px solid rgba(128, 128, 128, 0.39)",
-                    color: "gray",
-                  }}
+             
                   name="firstname"
                   value={input.firstname}
                   onChange={handleInput}
@@ -512,24 +619,13 @@ navigate("/login")
                 />
               </div>
               <div
-                className="input-2"
-                style={{ width: "30rem", height: "5rem" }}
+                className="input-2 inputs-about-page"
+               
                 id="input-2"
               >
                 <input
                   type="text"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    outline: "none",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    padding: "0.5rem 1.5rem",
-                    backgroundColor: "#ededed",
-                    border: "1px solid rgba(128, 128, 128, 0.39)",
-                    fontSize: "1.5rem",
-                    color: "gray",
-                  }}
+              
                   name="lastname"
                   value={input.lastname}
                   onChange={handleInput}
@@ -544,7 +640,7 @@ navigate("/login")
             style={{ padding: "0rem 3rem 3rem 3rem" }}
           >
             <div
-              className="heading-box-about"
+              className="heading-box-about "
               style={{ fontSize: "1.5rem", textTransform: "capitalize" }}
             >
               your gender
@@ -611,7 +707,7 @@ navigate("/login")
               </div>
             </div>
           </div>
-          <div className="box-3-about" style={{ padding: "3rem" }}>
+          <div className="box-3-about" style={{ padding: "3rem" }} >
             <div className="heading-box-about">
               <span
                 style={{
@@ -637,29 +733,13 @@ navigate("/login")
             </div>
             <div className="user-names-about" style={{ margin: "3rem 0rem" }}>
               <div
-                className="input-1"
-                style={{
-                  width: "30rem",
-                  height: "5rem",
-                  display: "flex",
-                  alignItems: "center",
-                }}
+                className="input-1 inputs-about-page"
+               
                 id="user-email-about"
               >
                 <input
                   type="email"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    outline: "none",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    padding: "0.5rem 1.5rem",
-                    fontSize: "1.5rem",
-                    backgroundColor: "#ededed",
-                    border: "1px solid rgba(128, 128, 128, 0.39)",
-                    color: "gray",
-                  }}
+                
                   value={input.email}
                   onChange={handleInput}
                   name="email"
@@ -696,29 +776,13 @@ navigate("/login")
             </div>
             <div className="user-names-about" style={{ margin: "3rem 0rem" }}>
               <div
-                className="input-1"
-                style={{
-                  width: "30rem",
-                  height: "5rem",
-                  display: "flex",
-                  alignItems: "center",
-                }}
+                className="input-1 inputs-about-page"
+              
                 id="user-phone-about"
               >
                 <input
                   type="number"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    outline: "none",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    padding: "0.5rem 1.5rem",
-                    fontSize: "1.5rem",
-                    backgroundColor: "#ededed",
-                    border: "1px solid rgba(128, 128, 128, 0.39)",
-                    color: "gray",
-                  }}
+            
                   value={input.phone}
                   onChange={handleInput}
                   name="phone"

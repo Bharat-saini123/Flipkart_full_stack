@@ -38,7 +38,7 @@ const OneItem = () => {
                 <NavLink
                   to={`${currData.id}`}
                   style={{ textDecoration: "none", color: "black"}}
-                >
+               key={currData.id} >
                   <div>
                     <div className="box-2">
                       <div className="my-one-item-total-elements">

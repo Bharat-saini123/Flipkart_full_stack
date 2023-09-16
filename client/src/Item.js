@@ -9,7 +9,7 @@ const Item = () => {
   useEffect(() => {
     filterFunctionData(id);
   }, []);
-console.log(item)
+// console.log(item)
 
   return (
     <div className="top-items" style={{ marginTop: "2rem" }}>
@@ -32,7 +32,7 @@ console.log(item)
               const shortName=myname.slice(0,15)
              
                 return (
-                  <NavLink to={`${curr[0].category}`} style={{textDecoration:"none",color:"black",fontWeight:"500"}}>
+                  <NavLink to={`${curr[0].category}`} style={{textDecoration:"none",color:"black",fontWeight:"500"}} key={curr[0].id}>
                     <div>
                       <figure style={{ width: "10rem", height: "10rem" }}>
                         <img
