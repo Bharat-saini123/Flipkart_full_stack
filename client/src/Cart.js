@@ -30,6 +30,7 @@ const navigate=useNavigate()
   } = useContext(AppContext);
 
 
+
  const userAuthenticateFunction=async()=>{
 try{
 const response=await fetch("/getData",{
@@ -42,6 +43,7 @@ const response=await fetch("/getData",{
   credentials:"include"
 })
 const data= await response.json();
+
 console.log(response.status)
 if(response.status===408){
   toast.error("please login before enter the cart page",{
@@ -58,6 +60,8 @@ else{
   
 }
  }
+
+
  useEffect(()=>{
   userAuthenticateFunction()
     },[])
@@ -67,6 +71,7 @@ useEffect(() => {
 useEffect(() => {
   totalPriceValue();
 }, [cartItem]);
+
 
  
   return (
@@ -107,22 +112,22 @@ useEffect(() => {
         {
           cartItem.length===0||cartItem===undefined?"":
           <div  className="head-cart-items" style={{padding:" 0rem 5rem"}}>
-          <div className="box-1" style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+          <div className="box-1 cart-box-div" >
 Items
           </div>
-          <div className="box-2" style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+          <div className="box-2 cart-box-div">
             name
             </div>
-            <div className="box-3"style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+            <div className="box-3 cart-box-div">
             quantity
             </div>
-            <div className="box-4" style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+            <div className="box-4 cart-box-div" >
             price
             </div>
-            <div className="box-5"style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+            <div className="box-5 total-price-cart cart-box-div">
             Total Price
             </div>
-            <div className="box-6" style={{fontSize:"2rem",textTransform:"capitalize",fontWeight:"500"}}>
+            <div className="box-6 cart-box-div delete-icon" >
             Remove
             </div>
             
@@ -150,7 +155,7 @@ Items
                             >
                               <div className="image">
                                 <figure
-                                  style={{ height: "5rem", width: "5rem" }}
+                                  style={{ height: "3rem", width: "3rem" }}
                                 >
                                   <img
                                     src={
@@ -169,12 +174,8 @@ Items
                                 </figure>
                               </div>
                               <div
-                                className="name"
-                                style={{
-                                  fontSize: "1.5rem",
-                                  fontWeight: "500",
-                                  textTransform: "capitalize",
-                                }}
+                                className="name cart-box-div"
+                              
                               >
                                 {ElementData.name === undefined
                                   ? ""
@@ -186,7 +187,7 @@ Items
                                 <div
                                   className="plus"
                                   style={{
-                                    fontSize: "3rem",
+                                    fontSize: "2rem",
                                     fontWeight: "500",
                                     cursor: "pointer",
                                   }}
@@ -199,13 +200,10 @@ Items
                                 </div>
                                 <div
                                   style={{
-                                    fontSize: "1.5rem",
-                                    fontWeight: "500",
-                                    padding: "0.4rem 1.2rem",
-                                    border:
-                                      "0.5px solid rgba(128, 128, 128, 0.39)",
+                                   
                                     margin: "0rem 0.5rem",
                                   }}
+                                  className="cart-box-div"
                                 >
                                   {ElementData.quantity === undefined
                                     ? ""
@@ -214,7 +212,7 @@ Items
                                 <div
                                   className="minus"
                                   style={{
-                                    fontSize: "3rem",
+                                    fontSize: "2rem",
                                     fontWeight: "500",
                                     cursor: "pointer",
                                   }}
@@ -227,7 +225,8 @@ Items
                                 </div>
                               </div>
                               <div
-                                style={{ fontSize: "2rem", fontWeight: "500" }}
+                              className="cart-box-div"
+                                
                               >
                                 <span> &#8377;</span>{" "}
                                 { ElementData.price ===
@@ -236,7 +235,7 @@ Items
                                   :  ElementData.price}
                               </div>
                               <div
-                                style={{ fontSize: "2rem", fontWeight: "500" }}
+                                className="cart-box-div"
                               >
                                 <span> &#8377;</span>{" "}
                                 {ElementData.quantity * ElementData.price ===
@@ -246,8 +245,8 @@ Items
                               </div>
                           
                               <div
-                                className="delete-icon"
-                                style={{ fontSize: "3rem", fontWeight: "500" }}
+                                className="delete-icon cart-box-div"
+                              
                               >
                                 <AiOutlineDelete
                                   style={{ color: "red", cursor: "pointer" }}
@@ -274,9 +273,9 @@ Items
 
       <div style={{marginLeft:"5rem",padding:"5rem",width:"50rem"}}>
         <div
-          className="total-price container-md"
+          className="total-price container-md total-price-cart-total-items"
           style={{
-            fontSize: "3rem",
+           
             fontWeight: "500",
             textTransform: "capitalize",
             

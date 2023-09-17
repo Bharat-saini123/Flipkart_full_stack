@@ -19,27 +19,20 @@ const SearchData = () => {
 
   return (
     <div className="main-search-data">
-      <div className="search-data" >
+      <div className="search-data">
         
         <div
           className="box-1 search-box"
-          style={{ display: "flex", flexDirection: "column", gap: "2rem" }}
+          style={{ display: "flex", flexDirection: "column",alignItems:"center",gap:"1rem"}}
         >
-          <div style={{fontSize:"3rem",textAlign:'center',textTransform:"uppercase",fontWeight:"500"}} >Filters</div>
+          <div style={{fontSize:"2rem",textAlign:'center',textTransform:"uppercase",fontWeight:"500"}} >Filters</div>
           
           <select
+          className="select-box"
             name=""
             id=""
-            style={{
-              fontSize: "1.5rem",
-              textTransform: "capitalize",
-              outline: "none",
-              marginBottom: "8rem",
-              border: "0.5px solid rgba(128, 128, 128, 0.39)",
-              padding:"0.4rem 1.2rem"
-
-            }}
-            onClick={filterBySection}
+         
+            onChange={filterBySection}
           >
             <option value="a-z">a-z</option>
             <option value="z-a">z-a</option>
@@ -59,7 +52,7 @@ const SearchData = () => {
           </p>
           <button
             className="btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"mi"}
           >
@@ -67,7 +60,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"vivo"}
           >
@@ -75,7 +68,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"infix"}
           >
@@ -83,7 +76,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+         
             onClick={MobileFilter}
             value={"oppo"}
           >
@@ -91,7 +84,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"realme"}
           >
@@ -99,7 +92,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"samsung"}
           >
@@ -118,7 +111,7 @@ const SearchData = () => {
           </p>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"camera"}
           >
@@ -126,7 +119,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+         
             onClick={MobileFilter}
             value={"laptop"}
           >
@@ -134,7 +127,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+            
             onClick={MobileFilter}
             value={"monitor"}
           >
@@ -142,7 +135,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"speaker"}
           >
@@ -171,7 +164,7 @@ const SearchData = () => {
           </p>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"causaulman"}
           >
@@ -179,7 +172,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"formalman"}
           >
@@ -187,7 +180,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"mantshirt"}
           >
@@ -195,7 +188,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"mansuit"}
           >
@@ -214,7 +207,7 @@ const SearchData = () => {
           </p>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"womandress"}
           >
@@ -222,7 +215,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"womanparty"}
           >
@@ -230,7 +223,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"womansort"}
           >
@@ -238,7 +231,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"winterwoman"}
           >
@@ -246,7 +239,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"womantop"}
           >
@@ -275,7 +268,7 @@ const SearchData = () => {
           </p>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+            
             onClick={MobileFilter}
             value={"casual shoes"}
           >
@@ -283,7 +276,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"formal shoes"}
           >
@@ -291,7 +284,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"sandal"}
           >
@@ -299,7 +292,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"sports shoes"}
           >
@@ -326,7 +319,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"casual women"}
           >
@@ -334,7 +327,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"heel"}
           >
@@ -342,7 +335,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+         
             onClick={MobileFilter}
             value={"sleeper women"}
           >
@@ -361,7 +354,7 @@ const SearchData = () => {
           </p>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"ac"}
           >
@@ -369,7 +362,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+            
             onClick={MobileFilter}
             value={"home appliances"}
           >
@@ -377,7 +370,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"microwave"}
           >
@@ -385,7 +378,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"rafigrator"}
           >
@@ -393,7 +386,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"tv"}
           >
@@ -401,7 +394,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"washing Machine"}
           >
@@ -420,7 +413,7 @@ const SearchData = () => {
           </p>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"diary"}
           >
@@ -428,7 +421,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+          
             onClick={MobileFilter}
             value={"detergent"}
           >
@@ -436,7 +429,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+           
             onClick={MobileFilter}
             value={"vegetables"}
           >
@@ -444,7 +437,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+       
             onClick={MobileFilter}
             value={"kitchen"}
           >
@@ -452,7 +445,7 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+       
             onClick={MobileFilter}
             value={"packagefood"}
           >
@@ -460,15 +453,15 @@ const SearchData = () => {
           </button>
           <button
             className="btn-info btn btn-light bounce-top"
-            style={{ fontSize: "1.5rem" }}
+         
             onClick={MobileFilter}
             value={"personalhome"}
           >
             Personal Home
           </button>
         </div>
-
-        <div className="my-one-item-box-2 my-one-item-box">
+<div className="new-class-item">
+        <div className="my-one-item-box-2 my-one-item-box  " id="my-total-one-search-filter-box">
           {searchData.map((curr) => {
             const data = curr.map((current) => {
               const oneItemData = current.map((currData) => {
@@ -500,12 +493,12 @@ const SearchData = () => {
                     >
                       <div>
                         <div className="box-2">
-                          <div className="my-one-item-total-elements">
+                          <div className="my-total-one-search-filter-box">
                             <div>
                               <figure
                                 style={{
-                                  width: "20rem",
-                                  height: "20rem",
+                                  width: "10rem",
+                                  height: "10rem",
                                   marginTop: "4rem",
                                 }}
                               >
@@ -521,9 +514,10 @@ const SearchData = () => {
                                 />
                               </figure>
                             </div>
-                            <div style={{ marginTop: "1.5rem" }}>
+                            <div style={{ marginTop: "1.5rem" }} className="box-display">
                               <div
-                                style={{ fontSize: "2rem", fontWeight: "500" }}
+                                
+                                className="serach-header-div-box"
                               >
                                 {myname.length > 60
                                   ? `${shortName}...`
@@ -542,7 +536,7 @@ const SearchData = () => {
                               <div
                                 className="reviews"
                                 style={{
-                                  fontSize: "1.5rem",
+                                  fontSize: "1rem",
                                   marginTop: "1rem",
                                   fontWeight: "500",
                                   textTransform: "capitalize",
@@ -628,7 +622,7 @@ const SearchData = () => {
                                 <div
                                   className="price"
                                   style={{
-                                    fontSize: "2.5rem",
+                                    fontSize: "2rem",
                                     fontWeight: "400",
                                   }}
                                 >
@@ -664,7 +658,7 @@ const SearchData = () => {
                                 <div
                                   className="price"
                                   style={{
-                                    fontSize: "2rem",
+                                    fontSize: "1.5rem",
                                     fontWeight: "400",
                                     textDecoration: "line-through",
                                     color: "gray",
@@ -700,6 +694,7 @@ const SearchData = () => {
             });
             return data;
           })}
+        </div>
         </div>
       </div>
     </div>

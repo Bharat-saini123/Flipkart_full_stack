@@ -12,8 +12,11 @@ const OneItem = () => {
     OneFilterFunction(name);
   }, []);
   return (
-    <div  className="my-top-one-item-box">
-      <div className="my-one-item-box-2 my-one-item-box">
+    <div className="my-top-one-item-box">
+      <div
+        className="my-one-item-box-2 my-one-item-box"
+        
+      >
         {oneItem.map((curr) => {
           const data = curr.map((current) => {
             const oneItemData = current.map((currData) => {
@@ -37,31 +40,31 @@ const OneItem = () => {
               return (
                 <NavLink
                   to={`${currData.id}`}
-                  style={{ textDecoration: "none", color: "black"}}
-               key={currData.id} >
+                  style={{ textDecoration: "none", color: "black" }}
+                  key={currData.id}
+                >
                   <div>
                     <div className="box-2">
                       <div className="my-one-item-total-elements">
-                        <div >
-                        <figure
-                          style={{
-                            width: "20rem",
-                            height: "20rem",
-                            marginTop:"4rem",
-                            
-                          }}
-                        >
-                          <img
-                            src={currData.image}
-                            alt=""
+                        <div>
+                          <figure
                             style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain",
-                              objectPosition: "center",
+                              width: "20rem",
+                              height: "20rem",
+                              marginTop: "4rem",
                             }}
-                          />
-                        </figure>
+                          >
+                            <img
+                              src={currData.image}
+                              alt=""
+                              style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "contain",
+                                objectPosition: "center",
+                              }}
+                            />
+                          </figure>
                         </div>
                         <div style={{ marginTop: "1.5rem" }}>
                           <div style={{ fontSize: "2rem", fontWeight: "500" }}>

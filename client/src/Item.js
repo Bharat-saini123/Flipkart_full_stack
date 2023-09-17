@@ -16,13 +16,7 @@ const Item = () => {
       <div className="all-item">
         <div
           className="item-box"
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-            backgroundColor:"#fff",
-            padding:"2rem"
-          }}
+         style={{backgroundColor:"#fff"}}
 
         >
           {item === undefined || null || item.length === 0
@@ -34,7 +28,7 @@ const Item = () => {
                 return (
                   <NavLink to={`${curr[0].category}`} style={{textDecoration:"none",color:"black",fontWeight:"500"}} key={curr[0].id}>
                     <div>
-                      <figure style={{ width: "10rem", height: "10rem" }}>
+                      <figure style={{ width: "10rem", height: "10rem",marginLeft:"1rem" }}>
                         <img
                           src={curr[0].image}
                           alt=""

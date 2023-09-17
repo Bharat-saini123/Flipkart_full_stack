@@ -91,18 +91,18 @@ toast.success("sucessfull Login", {
 
 
 
-<div className='user-signup-1'style={{width:"40rem",height:'3rem',fontSize:"1.5rem",display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"1rem"}}>
+<div className='user-signup-1'>
 <TfiEmail style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="email" placeholder='Email' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='email' name='email' value={input.email} onChange={handleinputFunction} autoComplete='off'/>
 </div>
 
-<div className='user-signup-1'style={{width:"40rem",height:'3rem',fontSize:"1.5rem",display:"flex",justifyContent:"center",alignItems:"center",marginBottom:"1rem"}}>
+<div className='user-signup-1'>
 <AiFillLock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Password' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='password' name='password' value={input.password}  onChange={handleinputFunction} autoComplete='off'/>
 </div>
 
 
 
 
-<button type="button" className="btn btn-primary" style={{width:"30rem",fontSize:'2rem',marginLeft:'5.5rem',marginTop:"2rem"}} onClick={sendData}>Sign in</button>
+<button type="button" className="btn btn-primary btn-signup" style={{fontSize:'2rem',marginLeft:'5.5rem',marginTop:"2rem"}} onClick={sendData}>Sign in</button>
 </div>
 
 

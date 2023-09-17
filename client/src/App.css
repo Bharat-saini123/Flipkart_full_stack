@@ -42,15 +42,109 @@ body{
 
 .bottom-header-figure{
   width: 100vw;
-   height: 95vh
+   height: 140vh
 
 }
 .bottom-header-figure img{
   width: 100%;
    height: 100%;
-  object-fit: "contain";
+  object-fit:"contain";
   object-position: center; 
 }
+.item-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+}
+.image-hovers-figures{
+  width: 7rem;
+  height: 7rem;
+  cursor: pointer;
+  border: 0.5px solid rgba(128, 128, 128, 0.39);
+  padding:1rem;
+}
+.hover-image-figure{
+  width: 30rem;
+  height: 30rem;
+  align-self: center;
+  cursor: pointer;
+  border: 0.5px solid rgba(128, 128, 128, 0.39);
+      padding:3rem;
+}
+
+.figure-my-hover-effect{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1rem;
+  height:50rem;
+  margin-left:3rem;
+  overflow-y:scroll;
+}
+
+
+
+
+.signup-header{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100vw;
+  height:100vh;
+  flex-direction:column
+}
+.user-signup-1{
+  width:40rem;
+  height:3rem;
+  font-size:1.5rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:1rem
+}
+.btn-signup{
+  width:30rem;
+}
+
+.my-total-one-search-filter-box{
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  padding: 2rem;
+  gap: 2rem;
+}
+.serach-header-div-box{
+font-size: 2rem;
+font-weight: 500;
+}
+
+.select-box{
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  outline: none;
+  margin-bottom: 8rem;
+  border: 0.5px solid rgba(128, 128, 128, 0.39);
+  padding:0.4rem 1.2rem;
+}
+
+.cart-box-div{
+  font-size:2rem;
+  text-transform:capitalize;
+  font-weight:500;
+}
+.total-price-cart-total-items{
+  font-size: 3rem;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -205,8 +299,8 @@ margin: 0rem 2rem;
 .my-one-item-total-elements{
   display: grid;
   grid-template-columns: 1fr 2.5fr 1fr;
-  padding: 3rem;
-  gap: 3rem;
+  padding: 2rem;
+  gap: 2rem;
 
 }
 
@@ -215,13 +309,16 @@ margin: 0rem 2rem;
 .main-image-hover-effect{
   display: grid;
   grid-template-columns: 1fr 10fr;
+  gap: 3rem;
+  
 
   
 }
 .image-hover-one-image{
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 5rem;
+  gap: 1rem;
+  
 }
 .hover-image-figure{
   transition: all 0.3s ease-in-out;
@@ -276,11 +373,11 @@ margin: 0rem 2rem;
   display: grid;
   grid-template-columns: 0.25fr 1fr;
   gap:2rem;
-  padding:2rem;
+  padding:0.5rem;
 }
 .search-box{
   background-color: #fff;
-  padding:5rem;
+  padding:1rem;
 }
 
 
@@ -424,6 +521,7 @@ margin: 0rem 2rem;
   .main-grid-box-footer{
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    
   }
   .search-box-all-items{
     width: 20rem;
@@ -446,7 +544,104 @@ margin: 0rem 2rem;
   .inputs-about-page{
     width:fit-content
   }
-  
+  .all-items-data{
+    grid-template-columns: 1fr;
+  }
+  .item-box{
+   
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    font-weight: 500;
+    gap: 4rem;
+    padding: 2rem;
+  }
+  .top-header-figure{
+    padding-left: 2rem;
+  }
+  .my-one-item-total-elements{
+    grid-template-columns: 0.3fr 1.5fr;
+   
+    place-items: center;
+  }
+  .main-image-hover-effect{
+   
+    grid-template-columns: 1fr ;
+  }
+  .image-hover-one-image{
+width: 40rem;
+padding: 1rem;
+  }
+  .hover-image-figure{
+    width: 10rem;
+    border: none;
+  }
+  .figure-my-hover-effect{
+    display:grid;
+  grid-template-rows:1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap:1rem;
+  width:45rem;
+  height: 7rem;
+  overflow-x:scroll;
+  }
+  .hover-image-figure{
+    padding: 0.5rem 0.5rem;
+  }
+  .image-hover-one-image{
+    gap:2rem;
+    padding: 2rem;
+    
+    width: 100vw;
+  }
+  .user-signup-1{
+    width: 30rem;
+  }
+  .btn-signup{
+    width: 20rem;
+  }
+ 
+  .search-box-all-items input{
+    font-size: 1rem;
+    padding:  1rem ;
+  }
+  .my-total-one-search-filter-box{
+    grid-template-columns: 1fr 5fr;
+    padding: 2rem;
+    gap: 1rem;
+    
+  }
+  .serach-header-div-box{
+    font-size: 1.2rem;
+  }
+  .select-box{
+    font-size: 1rem;
+   
+   
+  }
+  .main-shopping-item-card{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    gap:1rem
+   
+  }
+  .head-cart-items{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    gap: 1rem;
+  }
+  .cart-box-div{
+    font-size: 1.2rem;
+  }
+  .delete-icon{
+    display: none;
+  }
+  .total-price-cart-total-items{
+    font-size: 1.5rem;
+  }
+  .search-data{
+    grid-template-columns: 1fr 5fr;
+    gap: 0.5rem;
+  }
 
-  
+  .box-3-footer,.box-4-footer,.box-5-footer,.box-6-footer{
+    display: none;
+  }
 }

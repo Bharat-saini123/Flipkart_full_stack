@@ -19,7 +19,7 @@ const TopHeader = () => {
                   style={{ textDecoration: "none", color: "black" }}
                   className={"top-header-navlink"}
                 >
-                  <figure  className="top-header-figure">
+                  <figure  className="top-header-figure" >
                     <img
                       src={curr.image}
                       alt="homeImage"
