@@ -79,7 +79,7 @@ response.status(412).json("your password is incorrect")
                         else{
                             const token=await checkEmail.generateToken();
                          response.cookie("myloginCookie",token,{
-                            httpOnly:true,
+                           
                             expires:new Date(Date.now()+15000000)
                          })
                          
