@@ -8,8 +8,8 @@ import { BsFillFolderSymlinkFill } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { MdPayments, MdPermContactCalendar } from "react-icons/md";
 import { AiOutlineLogout } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
 import { AppContext } from "./Context";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
   const navigate = useNavigate();
