@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-"proxy":"http://localhost:5000",
+
   "dependencies": {
     "@babel/plugin-syntax-class-properties": "^7.12.13",
     "@stripe/react-stripe-js": "^2.1.2",

@@ -33,14 +33,15 @@ const {firstname,lastname,email,phone,password,confirmpassword}=input;
 
 
 try{
-const response=await fetch("/signup",{
+const response=await fetch("http://localhost:5000/signup",{
     method:"post",
     headers:{
         "Content-Type":"application/json"
     },
     body:JSON.stringify({
         firstname,lastname,email,phone,password,confirmpassword
-    })
+    }),
+    credentials:"include"
 })
 
 const data=await response.json();
