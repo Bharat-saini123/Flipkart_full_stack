@@ -34,7 +34,8 @@ const {state,dispatch}=useContext(AppContext);
       const response=await fetch("http://localhost:5000/signin",{
         method:"post",
         headers:{
-          "Content-Type":"application/json"
+          "Content-Type":"application/json",
+          
         },body:JSON.stringify({
           email,password
         }),

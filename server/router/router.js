@@ -8,6 +8,8 @@ const cors=require("cors")
 const corsOptions = {
     origin: 'http://localhost:3000',
     credentials: true,
+    exposedHeaders: ["set-cookie"],
+    
 
 }
 const router=express.Router();
@@ -78,13 +80,14 @@ response.status(412).json("your password is incorrect")
                         }
                         else{
                             const token=await checkEmail.generateToken();
-                         response.cookie("myloginCookie",token,{
-                          
-                            expires:new Date(Date.now()+1500000),
-                            httpOnly:true,
-                            secure:true,
-                            sameSite:"strict"
-                         })
+                            response.cookie("myloginCookie", token, {
+                                expires: new Date(Date.now() + 1500000),
+                                httpOnly: true,
+                                secure: true,
+                                sameSite: "strict",
+                               
+                                path: "/",
+                              });
                          
                             response.status(200).json("you sucessfuly login")
                             

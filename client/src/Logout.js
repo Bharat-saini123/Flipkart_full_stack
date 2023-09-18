@@ -10,13 +10,16 @@ const Logout = () => {
     const {state,dispatch,cartItem,cartDtspatch}=useContext(AppContext);
 const navigate=useNavigate();
 const logoutFunction=async()=>{
+
     try{
 const response=await fetch("http://localhost:5000/logout",{
     method:"get",
     headers:{
         Accept:"application/json",
-        "Content-Type":"application/json"
-    },credentials:"include"
+        "Content-Type":"application/json",
+        
+    },credentials:"include",
+    
 })
 const data=await response.json();
 toast.success("you successful logout", {
