@@ -32,7 +32,7 @@ const About = () => {
 
   const AboutFunction = async () => {
     try {
-      const response = await fetch("https://newhost-application-full.onrender.com/about", {
+      const response = await fetch("https://yes-my-web.onrender.com/about", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -66,7 +66,7 @@ console.log(data)
   const sendData = async () => {
     const { firstname, lastname, email, phone, gender } = input;
     try {
-      const response = await fetch("https://newhost-application-full.onrender.com/changeData", {
+      const response = await fetch("https://yes-my-web.onrender.com/changeData", {
         method: "put",
         headers: {
           "Content-Type": "application/json",
@@ -124,7 +124,7 @@ console.log(data)
     const formData = new FormData();
     formData.append("image", image);
     try {
-      const response = await fetch("https://newhost-application-full.onrender.com/profile", {
+      const response = await fetch("https://yes-my-web.onrender.com/profile", {
         method: "put",
         body: formData,
       });
@@ -142,7 +142,7 @@ console.log(data)
   };
   const userGetData = async () => {
     try {
-      const response = await fetch("https://newhost-application-full.onrender.com/getData", {
+      const response = await fetch("https://yes-my-web.onrender.com/getData", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -158,7 +158,7 @@ console.log(data)
   };
   const myLogout = async () => {
     try {
-      const response = await fetch("https://newhost-application-full.onrender.com/logout", {
+      const response = await fetch("https://yes-my-web.onrender.com/logout", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -182,7 +182,7 @@ console.log(data)
 
   const deleteAccountFunction = async () => {
     try {
-      const response = await fetch("https://newhost-application-full.onrender.com/deleteAccount", {
+      const response = await fetch("https://yes-my-web.onrender.com/deleteAccount", {
         method: "delete",
         headers: {
           Accept: "application/json",

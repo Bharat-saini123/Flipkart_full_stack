@@ -12,7 +12,7 @@ const navigate=useNavigate();
 const logoutFunction=async()=>{
 
     try{
-const response=await fetch("https://newhost-application-full.onrender.com/logout",{
+const response=await fetch("https://yes-my-web.onrender.com/logout",{
     method:"get",
     headers:{
         Accept:"application/json",

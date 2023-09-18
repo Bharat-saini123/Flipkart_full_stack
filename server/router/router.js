@@ -6,9 +6,9 @@ const Auth=require("../middleware/Auth");
 const userFlipkart=require("../database/data.js");
 const cors=require("cors")
 const corsOptions = {
-    origin: 'http://localhost:3000',
-    credentials: true,
-    exposedHeaders: ["set-cookie"],
+    origin: 'http://localhost:3000', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
     
 
 }
@@ -81,12 +81,9 @@ response.status(412).json("your password is incorrect")
                         else{
                             const token=await checkEmail.generateToken();
                             response.cookie("myloginCookie", token, {
-                                expires: new Date(Date.now() + 1500000),
-                                httpOnly: true,
-                                secure: false,
-                                sameSite:"none",
-                               
-                                path: "/",
+                                secure: true, 
+                                httpOnly: true, 
+                                maxAge: 3600000,
                               });
                          
                             response.status(200).json("you sucessfuly login")

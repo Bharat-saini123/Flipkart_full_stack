@@ -33,7 +33,7 @@ const {firstname,lastname,email,phone,password,confirmpassword}=input;
 
 
 try{
-const response=await fetch("https://newhost-application-full.onrender.com/signup",{
+const response=await fetch("https://yes-my-web.onrender.com/signup",{
     method:"post",
     headers:{
         "Content-Type":"application/json"
