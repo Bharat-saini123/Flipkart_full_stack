@@ -83,8 +83,8 @@ response.status(412).json("your password is incorrect")
                             response.cookie("myloginCookie", token, {
                                 expires: new Date(Date.now() + 1500000),
                                 httpOnly: true,
-                                secure: true,
-                                sameSite: "strict",
+                                secure: false,
+                                sameSite:"none",
                                
                                 path: "/",
                               });

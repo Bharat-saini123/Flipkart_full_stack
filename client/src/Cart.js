@@ -33,7 +33,7 @@ const navigate=useNavigate()
 
  const userAuthenticateFunction=async()=>{
 try{
-const response=await fetch("http://localhost:5000/getData",{
+const response=await fetch("https://newhost-application-full.onrender.com/getData",{
   method:"GET",
   headers:{
     Accept:"application/json",
