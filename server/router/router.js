@@ -1,15 +1,25 @@
+
 const express=require("express");
 const bcrypt=require("bcrypt");
 const path=require("path");
 const Auth=require("../middleware/Auth");
 const userFlipkart=require("../database/data.js");
+const cors=require("cors")
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    credentials: true,
+
+}
+const router=express.Router();
+router.use(cors(corsOptions));
 
 const stripe = require("stripe")(
     "sk_test_51NnjjuSIrhr3xwAM1ZgoXm2VOSwWAJZXEJrIQMxtY6RHDu7lAmFSQCROlvfGW8aRMdAO8RZnQNLtmuuLDnSFPRwN00rYd1qidi"
   );
-const router=express.Router();
 
 
+     
+ 
 
             router.post("/signup",async(request,response)=>{
 const firstname=request.body.firstname;
@@ -142,7 +152,9 @@ response.status(412).json("your password is incorrect")
 
 router.get("/logout",(request,response)=>{
     response.clearCookie("myloginCookie");
-    response.status(200).json("sucessfully clear cookie")
+    response.status(200).json("sucessful logout")
+
+ 
 })
             
           
@@ -151,7 +163,7 @@ router.get("/logout",(request,response)=>{
                     })
 
  const multer  = require('multer');
-const { request } = require("http");
+
  const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, '../src/images')

@@ -10,7 +10,7 @@ const Success = () => {
 
   const logoutFunction=async()=>{
     try{
-const response=await fetch("/logout",{
+const response=await fetch("https://flipkart-full-stack-new.onrender.com/logout",{
     method:"get",
     headers:{
         Accept:"application/json",

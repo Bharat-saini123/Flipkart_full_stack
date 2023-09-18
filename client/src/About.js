@@ -38,10 +38,10 @@ const About = () => {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        credentials: "include",
+       credentials:"include"
       });
       const data = await response.json();
-
+console.log(data)
       setInput({
         ...input,
         firstname: data.firstname,
@@ -148,7 +148,7 @@ const About = () => {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        credentials: "include",
+        credentials:"include"
       });
       const data = await response.json();
       setMyName(data);
@@ -257,44 +257,26 @@ const About = () => {
               {input.img === null ||
               input.img === "" ||
               input.img === undefined ? (
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    position: "absolute",
-                    top: "1rem",
-                    right: "11rem",
-                  }}
+                <div className="img-div-box"
+                  
                   onClick={imageFunction}
                 >
-                  <img
+                  <img 
                     src="./images/user.jpg"
-                    height={130}
-                    width={130}
-                    style={{ borderRadius: "50%", cursor: "pointer" }}
+                   
+                    style={{ borderRadius: "50%", cursor: "pointer",height:"13rem",width:"13rem" }}
                   />
                 </div>
               ) : (
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    position: "absolute",
-                    top: "1rem",
-                    right: "11rem",
-                  }}
+                <div className="img-div-box"
+                
                   onClick={imageFunction}
                 >
                   <img
                     src={require(`../../server/src/images/${input.img}`)}
                     alt=""
-                    height={130}
-                    width={130}
-                    style={{ borderRadius: "50%", cursor: "pointer" }}
+                   
+                    style={{ borderRadius: "50%", cursor: "pointer",height:"13rem",width:"13rem" }}
                   />
                 </div>
               )}
@@ -553,7 +535,7 @@ const About = () => {
             </div>
 
             <hr />
-            <div >
+            <div style={{padding:"2rem"}} >
               {" "}
               <button
                 className="btn btn-primary"

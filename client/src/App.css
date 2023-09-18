@@ -505,6 +505,17 @@ margin: 0rem 2rem;
   }
 }
 
+.img-div-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 1rem;
+  right: 11rem;
+
+}
+
 
 /* responsive */
 @media(max-width:768px){
@@ -644,4 +655,9 @@ padding: 1rem;
   .box-3-footer,.box-4-footer,.box-5-footer,.box-6-footer{
     display: none;
   }
+  .img-div-box{
+    top:1rem;
+    right: 17.5rem;
+  }
+  
 }
