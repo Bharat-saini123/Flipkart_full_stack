@@ -81,10 +81,10 @@ response.status(412).json("your password is incorrect")
                         else{
                             const token=await checkEmail.generateToken();
                             response.cookie("myloginCookie", token, {
-                                secure: false, 
+                                secure: true, 
                                 httpOnly: true, 
                                 expires:new Date(Date.now()+1500000),
-                                sameSite:"lax"
+                                sameSite:"none"
                               });
                          
                             response.status(200).json("you sucessfuly login")

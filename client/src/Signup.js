@@ -33,7 +33,7 @@ const {firstname,lastname,email,phone,password,confirmpassword}=input;
 
 
 try{
-const response=await fetch("https://backend-flipkart-mx84.onrender.com/signup",{
+const response=await fetch("https://bhai-flipkart.onrender.com/signup",{
     method:"post",
     headers:{
         "Content-Type":"application/json"
