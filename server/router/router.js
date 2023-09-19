@@ -7,7 +7,7 @@ const userFlipkart=require("../database/data.js");
 const cors=require("cors")
 const corsOptions = {
     origin: 'http://localhost:3000', 
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,get,head,put,patch,post,de',
   credentials: true,
     
 
@@ -81,9 +81,10 @@ response.status(412).json("your password is incorrect")
                         else{
                             const token=await checkEmail.generateToken();
                             response.cookie("myloginCookie", token, {
-                                secure: true, 
+                                secure: false, 
                                 httpOnly: true, 
-                                maxAge: 3600000,
+                                expires:new Date(Date.now()+1500000),
+                                sameSite:"none"
                               });
                          
                             response.status(200).json("you sucessfuly login")
