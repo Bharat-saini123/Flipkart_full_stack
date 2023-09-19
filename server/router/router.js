@@ -6,8 +6,8 @@ const Auth=require("../middleware/Auth");
 const userFlipkart=require("../database/data.js");
 const cors=require("cors")
 const corsOptions = {
-    origin: 'http://localhost:3000', 
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,get,head,put,patch,post,de',
+    origin: true, 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,get,head,put,patch,post,delete',
   credentials: true,
     
 
