@@ -12,7 +12,7 @@ const navigate=useNavigate();
 const logoutFunction=async()=>{
 
     try{
-const response=await fetch("http://localhost:5000/logout",{
+const response=await fetch("https://backend-flipkart-mx84.onrender.com/logout",{
     method:"get",
     headers:{
         Accept:"application/json",
