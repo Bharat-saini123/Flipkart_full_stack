@@ -145,13 +145,13 @@ response.status(412).json("your password is incorrect")
                         
                     },quantity:product.quantity
                       }))
-                      const frontendUrl = req.headers.origin
+                      const frontendUrl = req.headers.origin || req.headers.referer;
                 const session = await stripe.checkout.sessions.create({
                   payment_method_types:["card"],
                   line_items:lineItems,
                   mode:"payment",
-                  success_url:`${frontendUrl}/success`,
-                  cancel_url:`${frontendUrl}/cancel`,
+                  success_url:`${frontendUrl}.netlify.app/success`,
+                  cancel_url:`${frontendUrl}.netlify.app/cancel`,
                 });
               
                 res.json({ id:session.id });

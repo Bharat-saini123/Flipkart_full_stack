@@ -32,7 +32,7 @@ const About = () => {
 
   const AboutFunction = async () => {
     try {
-      const response = await fetch("http://localhost:5000/about", {
+      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/about", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -66,7 +66,7 @@ console.log(data)
   const sendData = async () => {
     const { firstname, lastname, email, phone, gender } = input;
     try {
-      const response = await fetch("http://localhost:5000/changeData", {
+      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/changeData", {
         method: "put",
         headers: {
           "Content-Type": "application/json",
@@ -124,7 +124,7 @@ console.log(data)
     const formData = new FormData();
     formData.append("image", image);
     try {
-      const response = await fetch("http://localhost:5000/profile", {
+      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/profile", {
         method: "put",
         body: formData,
      
@@ -144,7 +144,7 @@ console.log(data)
   };
   const userGetData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/getData", {
+      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/getData", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -160,7 +160,7 @@ console.log(data)
   };
   const myLogout = async () => {
     try {
-      const response = await fetch("http://localhost:5000/logout", {
+      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/logout", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -184,7 +184,7 @@ console.log(data)
 
   const deleteAccountFunction = async () => {
     try {
-      const response = await fetch("http://localhost:5000/deleteAccount", {
+      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/deleteAccount", {
         method: "delete",
         headers: {
           Accept: "application/json",

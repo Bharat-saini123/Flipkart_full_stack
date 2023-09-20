@@ -10,7 +10,7 @@ const Success = () => {
 
   const logoutFunction=async()=>{
     try{
-const response=await fetch("http://localhost:5000/logout",{
+const response=await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/logout",{
     method:"get",
     headers:{
         Accept:"application/json",
@@ -25,7 +25,7 @@ const data=await response.json();
 
   const userSuccessFunction=async()=>{
     try{
-const response=await fetch("http://localhost:5000/getData",{
+const response=await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/getData",{
   method:"GET",
   headers:{
 Accept:"application/json",
@@ -54,7 +54,7 @@ cartDtspatch({type:"LOGOUT_DATA"})
   return (
     <> <ToastContainer style={{fontSize:"1.5rem"}}/>
     <div style={{minHeight:"70vh",backgroundColor:"#FFF",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}} >
- <h1 style={{fontSize:"3rem",margin:"1rem 0rem",textTransform:'capitalize'}}>
+ <h1 style={{fontSize:"3rem",margin:"1rem 0rem",textTransform:'capitalize',textAlign:'center'}}>
 
   Your payment has been sucessful
  </h1>
