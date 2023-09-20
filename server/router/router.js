@@ -84,7 +84,8 @@ response.status(412).json("your password is incorrect")
                                 secure: true, 
                                 httpOnly: true, 
                                 expires:new Date(Date.now()+1500000),
-                                sameSite:"none"
+                                sameSite:"none",
+                                path:"/"
                               });
                          
                             response.status(200).json("you sucessfuly login")
