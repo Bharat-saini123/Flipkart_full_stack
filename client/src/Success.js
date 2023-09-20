@@ -10,7 +10,7 @@ const Success = () => {
 
   const logoutFunction=async()=>{
     try{
-const response=await fetch("https://saini-sahab-flipkart-backend-app.onrender.com/logout",{
+const response=await fetch("http://localhost:5000/logout",{
     method:"get",
     headers:{
         Accept:"application/json",
@@ -25,7 +25,7 @@ const data=await response.json();
 
   const userSuccessFunction=async()=>{
     try{
-const response=await fetch("https://saini-sahab-flipkart-backend-app.onrender.com/getData",{
+const response=await fetch("http://localhost:5000/getData",{
   method:"GET",
   headers:{
 Accept:"application/json",
