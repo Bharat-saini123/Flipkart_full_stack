@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import TopHeader from './TopHeader';
 import BottomHeader from './BottomHeader';
 
 
 
 const Home = () => {
-
 
   return (
     <div >

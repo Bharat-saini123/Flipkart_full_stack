@@ -31,7 +31,7 @@ const {state,dispatch}=useContext(AppContext);
     const password=input.password;
 
     try{
-      const response=await fetch("https://bharat-saini-flip-back-application.onrender.com/signin",{
+      const response=await fetch("http://localhost:5000/signin",{
         method:"post",
         headers:{
           "Content-Type":"application/json",

@@ -4,7 +4,8 @@ const bcrypt=require("bcrypt");
 const path=require("path");
 const Auth=require("../middleware/Auth");
 const userFlipkart=require("../database/data.js");
-const cors=require("cors")
+const cors=require("cors");
+
 const corsOptions = {
     origin: true, 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,get,head,put,patch,post,delete',
@@ -12,6 +13,7 @@ const corsOptions = {
     
 
 }
+
 const router=express.Router();
 router.use(cors(corsOptions));
 
@@ -143,13 +145,13 @@ response.status(412).json("your password is incorrect")
                         
                     },quantity:product.quantity
                       }))
-              
+                      const frontendUrl = req.headers.origin
                 const session = await stripe.checkout.sessions.create({
                   payment_method_types:["card"],
                   line_items:lineItems,
                   mode:"payment",
-                  success_url:`http://localhost:3000/success`,
-                  cancel_url:`http://localhost:3000/cancel`,
+                  success_url:`${frontendUrl}/success`,
+                  cancel_url:`${frontendUrl}/cancel`,
                 });
               
                 res.json({ id:session.id });
@@ -167,6 +169,9 @@ router.get("/logout",(request,response)=>{
 
  
 })
+
+
+
             
           
                 router.get("*",(request,response)=>{
