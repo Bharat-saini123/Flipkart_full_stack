@@ -33,7 +33,7 @@ const navigate=useNavigate()
 
  const userAuthenticateFunction=async()=>{
 try{
-const response=await fetch("https://flipkart-saini-back.onrender.com/getData",{
+const response=await fetch("https://saini-flipkaart-backend.onrender.com/getData",{
   method:"GET",
   headers:{
     Accept:"application/json",
