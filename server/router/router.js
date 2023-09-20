@@ -117,9 +117,12 @@ response.status(412).json("your password is incorrect")
             })
 
             router.delete("/deleteAccount",Auth,async(request,response)=>{
-                console.log(request.body);
+                
                 const user=await userFlipkart.findByIdAndDelete({_id:request.userId});
-             
+                response.clearCookie("myloginCookie",{
+                    sameSite: "none",
+                    secure: true,
+                  });
                 response.status(200).json("delete data");
               
               
@@ -191,10 +194,7 @@ router.put('/profile',Auth,upload.single('image'),async function(request, respon
   
         const user=await userFlipkart.findByIdAndUpdate({_id:request.userId},{image:imageData},{new:true});
         await  user.save();
-        response.clearCookie("myloginCookie",{
-            sameSite: "none",
-            secure: true,
-          });
+      
         response.status(200).json("save data")
         console.log(user);
 })
