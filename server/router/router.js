@@ -156,7 +156,7 @@ response.status(412).json("your password is incorrect")
 
 
 router.get("/logout",(request,response)=>{
-    response.clearCookie("myloginCookie");
+    response.clearCookie("myloginCookie",{path:"/"});
     response.status(200).json("sucessful logout")
 
  

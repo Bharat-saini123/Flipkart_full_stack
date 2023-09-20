@@ -137,7 +137,7 @@ const AppProvider = ({ children }) => {
       "pk_test_51NnjjuSIrhr3xwAM9fjpcaGIPWleNNg5mYWcurzJaP3qrWW6Z8l9iyHDD3BErBILjb4qEB9PEMSHUW7XADbWVVaR00Fe5ZvDOL"
     );
     const response = await fetch(
-      "http://localhost:5000/api/create-checkout-session",
+      "https://flipkart-saini-back.onrender.com/api/create-checkout-session",
       {
         method: "POST",
         headers: {
