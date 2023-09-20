@@ -33,7 +33,7 @@ const {firstname,lastname,email,phone,password,confirmpassword}=input;
 
 
 try{
-const response=await fetch("https://saini-flipkaart-backend.onrender.com/signup",{
+const response=await fetch("https://saini-sahab-flipkart-backend-app.onrender.com/signup",{
     method:"post",
     headers:{
         "Content-Type":"application/json"
@@ -100,22 +100,22 @@ if(response.status===200){
 <div className='user-signup-page' style={{padding:"5rem 7rem 5rem 5rem ",borderRadius:'5rem',border:"0.1rem solid #fff"}}>
 
 <div className='user-signup-1'>
-   <AiOutlineUser style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="text" placeholder='Firstname' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='firstname' name='firstname' value={input.firstname} onChange={changeInput} autoComplete='off'/>
+   <AiOutlineUser style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="text" placeholder='Firstname' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none",borderRadius:"1rem"}} id='firstname' name='firstname' value={input.firstname} onChange={changeInput} autoComplete='off'/>
 </div>
 <div className='user-signup-1'>
-   <AiOutlineUser style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="text" placeholder='Lastname' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='lastname' name='lastname' value={input.lastname} onChange={changeInput} autoComplete='off'/>
+   <AiOutlineUser style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="text" placeholder='Lastname' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none",borderRadius:"1rem"}} id='lastname' name='lastname' value={input.lastname} onChange={changeInput} autoComplete='off'/>
 </div>
 <div className='user-signup-1'>
-   <TfiEmail style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="email" placeholder='Email' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='email' name='email' value={input.email} onChange={changeInput} autoComplete='off'/>
+   <TfiEmail style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="email" placeholder='Email' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none",borderRadius:"1rem"}} id='email' name='email' value={input.email} onChange={changeInput} autoComplete='off'/>
 </div>
 <div className='user-signup-1'>
-   <BiSolidPhoneCall style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="number" placeholder='Phone' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='phone' name='phone' value={input.phone} onChange={changeInput} autoComplete='off'/>
+   <BiSolidPhoneCall style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="number" placeholder='Phone' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none",borderRadius:"1rem"}} id='phone' name='phone' value={input.phone} onChange={changeInput} autoComplete='off'/>
 </div>
 <div className='user-signup-1'>
-   <AiFillLock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Password' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='password' name='password' value={input.password} onChange={changeInput} autoComplete='off'/>
+   <AiFillLock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Password' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none",borderRadius:"1rem"}} id='password' name='password' value={input.password} onChange={changeInput} autoComplete='off'/>
 </div>
 <div className='user-signup-1'>
-   <AiFillUnlock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Confirmpassword' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='confirmpassword' name='confirmpassword' value={input.confirmpassword} onChange={changeInput} autoComplete='off'/>
+   <AiFillUnlock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Confirmpassword' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none",borderRadius:"1rem"}} id='confirmpassword' name='confirmpassword' value={input.confirmpassword} onChange={changeInput} autoComplete='off'/>
 </div>
 
 

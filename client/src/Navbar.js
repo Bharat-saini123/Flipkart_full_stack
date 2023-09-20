@@ -8,7 +8,7 @@ const Navbar = () => {
   const Menu = () => {
     if (state) {
       return (
-        <>
+        <div style={{display:"flex",justifyContent:"space-around",alignItems:'center'}}>
           <NavLink
             to="/"
             style={{
@@ -17,6 +17,9 @@ const Navbar = () => {
               color: "white",
               fontWeight: "bold",
               fontSize: "1.5rem",
+              display:"flex",
+              justifyContent:"center",
+              alignContent:"center",
             }}
           >
             {" "}
@@ -66,7 +69,7 @@ const Navbar = () => {
           >
             Logout
           </NavLink>
-        </>
+        </div>
       );
     } else {
       return (

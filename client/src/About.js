@@ -32,7 +32,7 @@ const About = () => {
 
   const AboutFunction = async () => {
     try {
-      const response = await fetch("https://saini-flipkaart-backend.onrender.com/about", {
+      const response = await fetch("https://saini-sahab-flipkart-backend-app.onrender.com/about", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -66,7 +66,7 @@ console.log(data)
   const sendData = async () => {
     const { firstname, lastname, email, phone, gender } = input;
     try {
-      const response = await fetch("https://saini-flipkaart-backend.onrender.com/changeData", {
+      const response = await fetch("https://saini-sahab-flipkart-backend-app.onrender.com/changeData", {
         method: "put",
         headers: {
           "Content-Type": "application/json",
@@ -124,10 +124,10 @@ console.log(data)
     const formData = new FormData();
     formData.append("image", image);
     try {
-      const response = await fetch("https://saini-flipkaart-backend.onrender.com/profile", {
+      const response = await fetch("https://saini-sahab-flipkart-backend-app.onrender.com/profile", {
         method: "put",
         body: formData,
-        credentials:"include"
+     
       })
       
       const data = await response.json();
@@ -144,7 +144,7 @@ console.log(data)
   };
   const userGetData = async () => {
     try {
-      const response = await fetch("https://saini-flipkaart-backend.onrender.com/getData", {
+      const response = await fetch("https://saini-sahab-flipkart-backend-app.onrender.com/getData", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -160,7 +160,7 @@ console.log(data)
   };
   const myLogout = async () => {
     try {
-      const response = await fetch("https://saini-flipkaart-backend.onrender.com/logout", {
+      const response = await fetch("https://saini-sahab-flipkart-backend-app.onrender.com/logout", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -184,7 +184,7 @@ console.log(data)
 
   const deleteAccountFunction = async () => {
     try {
-      const response = await fetch("https://saini-flipkaart-backend.onrender.com/deleteAccount", {
+      const response = await fetch("https://saini-sahab-flipkart-backend-app.onrender.com/deleteAccount", {
         method: "delete",
         headers: {
           Accept: "application/json",

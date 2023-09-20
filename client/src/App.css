@@ -524,6 +524,7 @@ margin: 0rem 2rem;
   }
   .main-grid-box-top-header{
     grid-template-columns: repeat(3,1fr);
+    
   }
   .main-item-content-header-box{
     grid-template-columns: repeat(2,1fr);
@@ -535,7 +536,8 @@ margin: 0rem 2rem;
     
   }
   .search-box-all-items{
-    width: 20rem;
+    width: 11rem;
+  
   
     
   }

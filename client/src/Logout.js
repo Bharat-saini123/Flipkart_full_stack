@@ -12,7 +12,7 @@ const navigate=useNavigate();
 const logoutFunction=async()=>{
 
     try{
-const response=await fetch("https://saini-flipkaart-backend.onrender.com/logout",{
+const response=await fetch("https://saini-sahab-flipkart-backend-app.onrender.com/logout",{
     method:"get",
     headers:{
         Accept:"application/json",

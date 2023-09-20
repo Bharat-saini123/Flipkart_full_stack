@@ -31,7 +31,7 @@ const {state,dispatch}=useContext(AppContext);
     const password=input.password;
 
     try{
-      const response=await fetch("https://saini-flipkaart-backend.onrender.com/signin",{
+      const response=await fetch("https://saini-sahab-flipkart-backend-app.onrender.com/signin",{
         method:"post",
         headers:{
           "Content-Type":"application/json",
@@ -96,11 +96,11 @@ toast.success("sucessfull Login", {
 
 
 <div className='user-signup-1'>
-<TfiEmail style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="email" placeholder='Email' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='email' name='email' value={input.email} onChange={handleinputFunction} autoComplete='off'/>
+<TfiEmail style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="email" placeholder='Email' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none",borderRadius:"1rem"}} id='email' name='email' value={input.email} onChange={handleinputFunction} autoComplete='off'/>
 </div>
 
 <div className='user-signup-1'>
-<AiFillLock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Password' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none"}} id='password' name='password' value={input.password}  onChange={handleinputFunction} autoComplete='off'/>
+<AiFillLock style={{fontSize:"3rem",color:"#fff",marginRight:"0.5rem"}}/> <input type="password" placeholder='Password' style={{width:"100%",height:"100%",outline:"none",padding:"0.5rem 1.5rem",border:"none",borderRadius:"1rem"}} id='password' name='password' value={input.password}  onChange={handleinputFunction} autoComplete='off'/>
 </div>
 
 
