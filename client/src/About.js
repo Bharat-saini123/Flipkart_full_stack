@@ -32,16 +32,16 @@ const About = () => {
 
   const AboutFunction = async () => {
     try {
-      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/about", {
+      const response = await fetch("http://localhost:5000/about", {
         method: "get",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-       credentials:"include"
+        credentials: "include",
       });
       const data = await response.json();
-console.log(data)
+      console.log(data);
       setInput({
         ...input,
         firstname: data.firstname,
@@ -66,7 +66,7 @@ console.log(data)
   const sendData = async () => {
     const { firstname, lastname, email, phone, gender } = input;
     try {
-      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/changeData", {
+      const response = await fetch("http://localhost:5000/changeData", {
         method: "put",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,8 @@ console.log(data)
           phone,
           email,
           gender,
-        }), credentials:"include",
+        }),
+        credentials: "include",
       });
       const data = await response.json();
 
@@ -124,12 +125,12 @@ console.log(data)
     const formData = new FormData();
     formData.append("image", image);
     try {
-      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/profile", {
+      const response = await fetch("http://localhost:5000/profile", {
         method: "put",
         body: formData,
-     
-      })
-      
+        credentials: "include",
+      });
+
       const data = await response.json();
 
       if (response.status === 200) {
@@ -144,13 +145,13 @@ console.log(data)
   };
   const userGetData = async () => {
     try {
-      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/getData", {
+      const response = await fetch("http://localhost:5000/getData", {
         method: "get",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        credentials:"include"
+        credentials: "include",
       });
       const data = await response.json();
       setMyName(data);
@@ -160,7 +161,7 @@ console.log(data)
   };
   const myLogout = async () => {
     try {
-      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/logout", {
+      const response = await fetch("http://localhost:5000/logout", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -184,7 +185,7 @@ console.log(data)
 
   const deleteAccountFunction = async () => {
     try {
-      const response = await fetch("https://saini-sahab-bharat-saini-backend.onrender.com/deleteAccount", {
+      const response = await fetch("http://localhost:5000/deleteAccount", {
         method: "delete",
         headers: {
           Accept: "application/json",
@@ -209,12 +210,17 @@ console.log(data)
     }
   };
 
+
+  
+
   useEffect(() => {
     userGetData();
   }, [myName]);
   useEffect(() => {
     AboutFunction();
   }, []);
+
+ 
 
   return (
     <div className="main-about-page">
@@ -259,31 +265,31 @@ console.log(data)
               {input.img === null ||
               input.img === "" ||
               input.img === undefined ? (
-                <div className="img-div-box"
-                  
-                  onClick={imageFunction}
-                >
-                  <img 
+                <div className="img-div-box" onClick={imageFunction}>
+                  <img
                     src="./images/user.jpg"
-                   
-                    style={{ borderRadius: "50%", cursor: "pointer",height:"13rem",width:"13rem" }}
+                    style={{
+                      borderRadius: "50%",
+                      cursor: "pointer",
+                      height: "13rem",
+                      width: "13rem",
+                    }}
                   />
                 </div>
               ) : (
-                <div className="img-div-box"
-                
-                  onClick={imageFunction}
-                >
+                <div className="img-div-box" onClick={imageFunction}>
                   <img
-                    src={require(`../../server/src/images/${input.img}`)}
-                    alt=""
-                   
-                    style={{ borderRadius: "50%", cursor: "pointer",height:"13rem",width:"13rem" }}
+                    src={`http://localhost:5000/images/${input.img}`}
+                    style={{
+                      borderRadius: "50%",
+                      cursor: "pointer",
+                      height: "13rem",
+                      width: "13rem",
+                    }}
                   />
                 </div>
               )}
               <div style={{ textAlign: "center", marginTop: "5rem" }}>
-                {" "}
                 <button
                   className="upload btn btn-primary"
                   style={{
@@ -347,7 +353,7 @@ console.log(data)
               }}
             >
               <FaUserAlt
-                style={{ fontSize: "2rem",display:"inline-block" }}
+                style={{ fontSize: "2rem", display: "inline-block" }}
                 className="text-primary"
               />
 
@@ -397,14 +403,13 @@ console.log(data)
             <hr />
             <div
               style={{
-               
                 display: "grid",
                 gridTemplateColumns: "0.25fr 1fr",
                 padding: "3rem",
               }}
             >
               <MdPayments
-                style={{ fontSize: "2rem",display:"inline-block" }}
+                style={{ fontSize: "2rem", display: "inline-block" }}
                 className="text-primary"
               />
 
@@ -416,7 +421,7 @@ console.log(data)
                     textTransform: "uppercase",
                   }}
                 >
-                    My order
+                  My order
                 </div>
 
                 <div
@@ -454,14 +459,13 @@ console.log(data)
             <hr />
             <div
               style={{
-               
                 display: "grid",
                 gridTemplateColumns: "0.25fr 1fr",
                 padding: "3rem",
               }}
             >
               <MdPermContactCalendar
-                style={{ fontSize: "2rem",display:"inline-block"  }}
+                style={{ fontSize: "2rem", display: "inline-block" }}
                 className="text-primary"
               />
 
@@ -473,7 +477,7 @@ console.log(data)
                     textTransform: "uppercase",
                   }}
                 >
-                    MY STUFF
+                  MY STUFF
                 </div>
 
                 <div
@@ -484,7 +488,7 @@ console.log(data)
                     fontWeight: "400",
                   }}
                 >
-                   my coupon
+                  my coupon
                 </div>
                 <div
                   style={{
@@ -494,7 +498,7 @@ console.log(data)
                     fontWeight: "400",
                   }}
                 >
-                    my reviews and rating
+                  my reviews and rating
                 </div>
                 <div
                   style={{
@@ -537,11 +541,11 @@ console.log(data)
             </div>
 
             <hr />
-            <div style={{padding:"2rem"}} >
+            <div style={{ padding: "2rem" }}>
               {" "}
               <button
                 className="btn btn-primary"
-                style={{ fontSize: "1.5rem",marginLeft:"6rem" }}
+                style={{ fontSize: "1.5rem", marginLeft: "6rem" }}
                 onClick={deleteAccountFunction}
               >
                 Delete Account
@@ -588,13 +592,9 @@ console.log(data)
               }}
               id="user-items-about"
             >
-              <div
-                className="input-1 inputs-about-page"
-                
-              >
+              <div className="input-1 inputs-about-page">
                 <input
                   type="text"
-             
                   name="firstname"
                   value={input.firstname}
                   onChange={handleInput}
@@ -602,14 +602,9 @@ console.log(data)
                   disabled
                 />
               </div>
-              <div
-                className="input-2 inputs-about-page"
-               
-                id="input-2"
-              >
+              <div className="input-2 inputs-about-page" id="input-2">
                 <input
                   type="text"
-              
                   name="lastname"
                   value={input.lastname}
                   onChange={handleInput}
@@ -691,7 +686,7 @@ console.log(data)
               </div>
             </div>
           </div>
-          <div className="box-3-about" style={{ padding: "3rem" }} >
+          <div className="box-3-about" style={{ padding: "3rem" }}>
             <div className="heading-box-about">
               <span
                 style={{
@@ -716,14 +711,9 @@ console.log(data)
               </NavLink>
             </div>
             <div className="user-names-about" style={{ margin: "3rem 0rem" }}>
-              <div
-                className="input-1 inputs-about-page"
-               
-                id="user-email-about"
-              >
+              <div className="input-1 inputs-about-page" id="user-email-about">
                 <input
                   type="email"
-                
                   value={input.email}
                   onChange={handleInput}
                   name="email"
@@ -759,14 +749,9 @@ console.log(data)
               </NavLink>
             </div>
             <div className="user-names-about" style={{ margin: "3rem 0rem" }}>
-              <div
-                className="input-1 inputs-about-page"
-              
-                id="user-phone-about"
-              >
+              <div className="input-1 inputs-about-page" id="user-phone-about">
                 <input
                   type="number"
-            
                   value={input.phone}
                   onChange={handleInput}
                   name="phone"

@@ -16,7 +16,7 @@ const corsOptions = {
 
 const router=express.Router();
 router.use(cors(corsOptions));
-
+router.use(express.static("../public"));
 const stripe = require("stripe")(
     "sk_test_51NnjjuSIrhr3xwAM1ZgoXm2VOSwWAJZXEJrIQMxtY6RHDu7lAmFSQCROlvfGW8aRMdAO8RZnQNLtmuuLDnSFPRwN00rYd1qidi"
   );
@@ -119,7 +119,7 @@ response.status(412).json("your password is incorrect")
             })
 
             router.delete("/deleteAccount",Auth,async(request,response)=>{
-                
+              
                 const user=await userFlipkart.findByIdAndDelete({_id:request.userId});
                 response.clearCookie("myloginCookie",{
                     sameSite: "none",
@@ -129,7 +129,6 @@ response.status(412).json("your password is incorrect")
               
               
             })
-
 
             router.post("/api/create-checkout-session", async (req, res) => {
                 const product = req.body.product;
@@ -150,8 +149,8 @@ response.status(412).json("your password is incorrect")
                   payment_method_types:["card"],
                   line_items:lineItems,
                   mode:"payment",
-                  success_url:`${frontendUrl}.netlify.app/success`,
-                  cancel_url:`${frontendUrl}.netlify.app/cancel`,
+                  success_url:`${frontendUrl}/success`,
+                  cancel_url:`${frontendUrl}/cancel`,
                 });
               
                 res.json({ id:session.id });
@@ -182,16 +181,23 @@ router.get("/logout",(request,response)=>{
 
  const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, '../src/images')
+      cb(null, '../public/images');
     },
+
     filename: function (req, file, cb) {
       const uniqueSuffix = Date.now() 
-      cb(null,  uniqueSuffix+file.originalname)
+      cb(null,  file.fieldname+uniqueSuffix+path.extname(file.originalname))
     }
   })
+
+
+
+
+
   
   const upload = multer({ storage: storage })
-                    
+
+         
 
 router.put('/profile',Auth,upload.single('image'),async function(request, response, next) {
     console.log(request.body)
@@ -201,6 +207,7 @@ router.put('/profile',Auth,upload.single('image'),async function(request, respon
         await  user.save();
       
         response.status(200).json("save data")
+        
         console.log(user);
 })
 
