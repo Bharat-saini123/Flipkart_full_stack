@@ -32,7 +32,7 @@ const About = () => {
 
   const AboutFunction = async () => {
     try {
-      const response = await fetch("http://localhost:5000/about", {
+      const response = await fetch("https://saini-sahab-bharat-flipkart-back.onrender.com/about", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -66,7 +66,7 @@ const About = () => {
   const sendData = async () => {
     const { firstname, lastname, email, phone, gender } = input;
     try {
-      const response = await fetch("http://localhost:5000/changeData", {
+      const response = await fetch("https://saini-sahab-bharat-flipkart-back.onrender.com/changeData", {
         method: "put",
         headers: {
           "Content-Type": "application/json",
@@ -125,7 +125,7 @@ const About = () => {
     const formData = new FormData();
     formData.append("image", image);
     try {
-      const response = await fetch("http://localhost:5000/profile", {
+      const response = await fetch("https://saini-sahab-bharat-flipkart-back.onrender.com/profile", {
         method: "put",
         body: formData,
         credentials: "include",
@@ -145,7 +145,7 @@ const About = () => {
   };
   const userGetData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/getData", {
+      const response = await fetch("https://saini-sahab-bharat-flipkart-back.onrender.com/getData", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -161,7 +161,7 @@ const About = () => {
   };
   const myLogout = async () => {
     try {
-      const response = await fetch("http://localhost:5000/logout", {
+      const response = await fetch("https://saini-sahab-bharat-flipkart-back.onrender.com/logout", {
         method: "get",
         headers: {
           Accept: "application/json",
@@ -185,7 +185,7 @@ const About = () => {
 
   const deleteAccountFunction = async () => {
     try {
-      const response = await fetch("http://localhost:5000/deleteAccount", {
+      const response = await fetch("https://saini-sahab-bharat-flipkart-back.onrender.com/deleteAccount", {
         method: "delete",
         headers: {
           Accept: "application/json",
@@ -277,14 +277,16 @@ const About = () => {
                   />
                 </div>
               ) : (
-                <div className="img-div-box" onClick={imageFunction}>
+                <div className="img-div-box" onClick={imageFunction} style={{width:"13rem",height:"13rem"}}>
                   <img
-                    src={`http://localhost:5000/images/${input.img}`}
+                    src={`https://saini-sahab-bharat-flipkart-back.onrender.com/images/${input.img}`}
                     style={{
                       borderRadius: "50%",
                       cursor: "pointer",
-                      height: "13rem",
-                      width: "13rem",
+                      height: "100%",
+                      width: "100%",
+                      objectFit:"contain",
+                      objectPosition:'center'
                     }}
                   />
                 </div>
