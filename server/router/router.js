@@ -15,7 +15,7 @@ const router = express.Router();
 router.use(cors(corsOptions));
 router.use(express.static("../public"));
 const stripe = require("stripe")(
-  "sk_test_51NnjjuSIrhr3xwAM1ZgoXm2VOSwWAJZXEJrIQMxtY6RHDu7lAmFSQCROlvfGW8aRMdAO8RZnQNLtmuuLDnSFPRwN00rYd1qidi"
+  your_stripe_client_id,
 );
 
 router.post("/signup", async (request, response) => {
